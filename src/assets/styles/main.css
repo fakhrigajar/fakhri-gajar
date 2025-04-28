@@ -712,9 +712,6 @@ header .header__container .hamburger-react {
   display: flex;
   flex-direction: column;
 }
-#about .hero__container .hero__right svg {
-  height: 400px;
-}
 #about .hero__container .hero__right .hero__right-image {
   background: rgba(255, 255, 255, 0.2);
   border-radius: 50%;

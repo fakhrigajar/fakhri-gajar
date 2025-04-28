@@ -1,12 +1,12 @@
 export const bio = {
   name: "Fakhri Gajar",
   description:
-    "Frontend Developer, with knowledge in web development and design, I offer the best projects resulting in quality work",
+    "I’m a passionate Frontend Developer focused on crafting clean, responsive, and user-friendly web interfaces. I love turning ideas into interactive digital experiences using modern web technologies.",
   roles: ["Frontend Developer", "Coder", "Programmer"],
   resume:
-    "https://drive.google.com/file/d/1ZhKRlUz4ePv-yaT8EBvDUH9kWXIwoGHn/view?usp=sharing",
+    "https://drive.google.com/file/d/1EX1MmNCjlqlO8EBgObphCn-YcZM2-Y2p/view?usp=sharing",
   image:
-    "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/hero-image.jpg?alt=media&token=64219379-0685-40e9-8717-2eb1aa67408e",
+    "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/9754_0.jpg?alt=media&token=3e832f36-4796-4031-b157-ff725d4f87dd",
 };
 
 export const socials = [
@@ -112,7 +112,7 @@ export const skills = [
       "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Skills%2Fmui.png?alt=media&token=6a5942b3-50fc-44dd-b1e3-dea7771c9207",
   },
   {
-    label: "Redux/Redux Toolkit",
+    label: "Redux / Redux Toolkit",
     image:
       "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Skills%2Fredux.png?alt=media&token=1c3b3b81-851d-4b1b-8ede-0a1c9b70c926",
   },
@@ -126,50 +126,47 @@ export const skills = [
     image:
       "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Skills%2Ftailwind.png?alt=media&token=3baa314f-117e-4fb1-ba57-fef00e300980",
   },
+  {
+    label: "Node JS",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Skills%2Fnodejs-1-logo-png-transparent.png?alt=media&token=ccfed37c-2232-4cf1-8ca8-2a97bc45e302",
+  },
+  {
+    label: "Express JS",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Skills%2FExpress.png?alt=media&token=22ef20c0-2bc9-4226-88fb-3629c4aca5f7",
+  },
+  {
+    label: "Postman",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Skills%2Fpostman-icon.svg?alt=media&token=d3922f7a-1887-4e56-bf81-0db36707c932",
+  },
 ];
 
 export const experiences = [
   {
     image:
-      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Companies%2Fcompany-1.jpg?alt=media&token=a1b936e0-c1c0-483e-be30-afda217d801b",
-    position: "Hackaton • Frontend Developer",
-    company: `"Bir Könüllü" Tələbələrin Əməkdaşlığı Təşkilatı`,
-    date: "Apr 2024 - Apr 2024",
-    description: `I participated in the Azerbaijan 2030 and Sustainable Development National Student Competition on April 26-28. In the direction of "increasing the use of renewable energy sources", as a "Tərəqqi" team, we thought of ideas that we could integrate with our field, we all worked hard and researched. We presented the project called "PiezoGen". At the same time, we had fun, learned and made friends with each other. We may not have won, but we will never forget the experience and good memories`,
-    skills: [
-      "Teamwork",
-      "Front-End Development",
-      "JavaScript",
-      "Problem Solving",
-      "Analytical Skills",
-      "React.js",
-      "Microsoft PowerPoint",
-    ],
-  },
-  {
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Companies%2Fcompany-2.jpg?alt=media&token=1c1247ba-49ef-40ee-b92f-607af4f27799",
-    position: "Intern • Frontend Developer",
-    company: "JET Academy",
-    date: "May 2024 - Present",
-    description: `I am currently participating in JET Academy's Frontend Developer internship program. Here, I am increasing my knowledge and experience by working on interesting projects.`,
+      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Companies%2Fcompany-4.jpg?alt=media&token=48b7deb9-88bf-4892-ab00-f125b1c55585",
+    position: "Frontend Developer (Mentor)",
+    company: "IT Brains",
+    date: "September 2024 - November 2024",
+    description: `As a Frontend Developer Mentor, I enjoy sharing what I’ve learned about building clean, responsive, and user-friendly interfaces. I guide beginners through real project experiences, explain concepts in a simple way, and help them avoid the mistakes I made when starting out. It’s about growing together and turning challenges into confidence`,
     skills: [
       "Front-End Development",
       "JavaScript",
       "Problem Solving",
       "Analytical Skills",
-      "React.js",
       "HTML",
       "CSS",
-      "SCSS",
     ],
   },
+
   {
     image:
       "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Companies%2Fcompany-3.jpg?alt=media&token=51ed8beb-9446-4c19-847a-834a82433558",
-    position: "Startup • Frontend Developer",
+    position: "Frontend Developer (Startup)",
     company: "NEXT US",
-    date: "May 2024 - Present",
+    date: "May 2024 - August 2024",
     description: `I am currently working as a Frontend Developer at a startup called NEXT US. Here we work as a team and try to come up with interesting projects.`,
     skills: [
       "Front-End Development",
@@ -184,33 +181,88 @@ export const experiences = [
       "REST API",
     ],
   },
+
+  {
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Companies%2Fcompany-2.jpg?alt=media&token=1c1247ba-49ef-40ee-b92f-607af4f27799",
+    position: "Frontend Developer (Intern)",
+    company: "JET Academy",
+    date: "May 2024 - June 2024",
+    description: `I am currently participating in JET Academy's Frontend Developer internship program. Here, I am increasing my knowledge and experience by working on interesting projects.`,
+    skills: [
+      "Front-End Development",
+      "JavaScript",
+      "Problem Solving",
+      "Analytical Skills",
+      "React.js",
+      "HTML",
+      "CSS",
+      "SCSS",
+    ],
+  },
 ];
+
+// {
+//     image:
+//       "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Companies%2Fcompany-1.jpg?alt=media&token=a1b936e0-c1c0-483e-be30-afda217d801b",
+//     position: "Hackaton • Frontend Developer",
+//     company: `"Bir Könüllü" Tələbələrin Əməkdaşlığı Təşkilatı`,
+//     date: "Apr 2024 - Apr 2024",
+//     description: `I participated in the Azerbaijan 2030 and Sustainable Development National Student Competition on April 26-28. In the direction of "increasing the use of renewable energy sources", as a "Tərəqqi" team, we thought of ideas that we could integrate with our field, we all worked hard and researched. We presented the project called "PiezoGen". At the same time, we had fun, learned and made friends with each other. We may not have won, but we will never forget the experience and good memories`,
+//     skills: [
+//       "Teamwork",
+//       "Front-End Development",
+//       "JavaScript",
+//       "Problem Solving",
+//       "Analytical Skills",
+//       "React.js",
+//       "Microsoft PowerPoint",
+//     ],
+//   },
 
 export const projects = [
   {
-    name: "FITB NotePad",
+    name: "FITB Movies",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/FITB%20NotePad.png?alt=media&token=048a0ca2-d18e-439d-9cd4-23112e3da068",
-    skills: ["HTML", "CSS", "Javascript", "SASS/SCSS"],
-    date: "May 2023 - May 2023",
+      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Screenshot%202025-04-29%20at%2000.52.53.jpeg?alt=media&token=f236b153-4c01-4aa6-a4bd-9bb06d1be879",
+    skills: [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Tailwind CSS",
+      "Swiper",
+      "Ant Design",
+      "Formik",
+      "Axios",
+      "Clerk",
+    ],
+    date: "December 2024",
     category: "Web App",
     links: [
-      "https://fitb-notepad.netlify.app/",
-      "https://github.com/itzjustfitb/FITB-NotePad",
+      "https://fitbmovies.vercel.app/",
+      "https://github.com/itzjustfitb/fitbmovies",
     ],
   },
   {
-    name: "FITB NFT",
+    name: "FITB NotePad +",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/FITB%20NFT.png?alt=media&token=3a36fb37-37c4-48fa-b307-f1ac9a46ccbc",
-    skills: ["HTML", "CSS", "Javascript", "SASS/SCSS"],
-    date: "May 2023 - Jun 2023",
-    category: "Landing Page",
+      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Screenshot%202025-04-29%20at%2001.01.24.png?alt=media&token=e25c7d61-cbca-49a2-9408-bac621e7853b",
+    skills: [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Tailwind CSS",
+      "Clerk",
+      "Material UI",
+    ],
+    date: "August 2024 - August 2024",
+    category: "Web App",
     links: [
-      "https://fitb-nft.netlify.app/",
-      "https://github.com/itzjustfitb/FITB-NFT-Marketplace",
+      "https://fitb-notepad-plus.netlify.app/",
+      "https://github.com/itzjustfitb/fitb-notepad-plus",
     ],
   },
+
   {
     name: "FITB Game",
     image:
@@ -221,30 +273,6 @@ export const projects = [
     links: [
       "https://fitbgame.netlify.app/",
       "https://github.com/itzjustfitb/FITB-Game",
-    ],
-  },
-  {
-    name: "Portfolio",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Portfolio.png?alt=media&token=c8b6bac3-aafc-4185-92df-5db74f736546",
-    skills: ["HTML", "CSS", "Javascript", "SASS/SCSS"],
-    date: "Nov 2023 - Nov 2023",
-    category: "Landing Page",
-    links: [
-      "https://fakhrigajar.xyz/",
-      "https://github.com/itzjustfitb/Fakhri-Gajar-Portfolio",
-    ],
-  },
-  {
-    name: "Calculator",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Calculator%20App.png?alt=media&token=ab5ca1c3-1a0c-4a0e-ad12-f3ea17869e5e",
-    skills: ["HTML", "CSS", "Javascript", "SASS/SCSS"],
-    date: "Sep 2023 - Sep 2023",
-    category: "Web App",
-    links: [
-      "https://fitb-calculator.netlify.app/",
-      "https://github.com/itzjustfitb/Calculator-App/",
     ],
   },
   {
@@ -278,30 +306,6 @@ export const projects = [
     links: [
       "https://fitbfinder.netlify.app/",
       "https://github.com/itzjustfitb/FITB-Finder",
-    ],
-  },
-  {
-    name: "Communicat-E",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Communicat-E.png?alt=media&token=f9a7e10a-7dbd-4de2-9756-92a4529c420d",
-    skills: ["HTML", "CSS", "Javascript", "SASS/SCSS", "React JS"],
-    date: "Apr 2024 - May 2024",
-    category: "Portfolio",
-    links: [
-      "https://communicat-e.netlify.app/",
-      "https://github.com/itzjustfitb/communicate-react",
-    ],
-  },
-  {
-    name: "PiezoGen",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/PiezoGen.png?alt=media&token=aaebf08a-9b5d-401f-9e02-5a906a8ef206",
-    skills: ["HTML", "CSS", "Javascript", "SASS/SCSS", "React JS"],
-    date: "Apr 2024 - Apr 2024",
-    category: "Landing Page",
-    links: [
-      "https://piezogen.netlify.app/",
-      "https://github.com/itzjustfitb/piezogen",
     ],
   },
 ];
