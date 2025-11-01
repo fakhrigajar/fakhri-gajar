@@ -6,7 +6,7 @@ export const bio = {
   resume:
     "https://drive.google.com/file/d/1EX1MmNCjlqlO8EBgObphCn-YcZM2-Y2p/view?usp=sharing",
   image:
-    "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/9754_0.jpg?alt=media&token=3e832f36-4796-4031-b157-ff725d4f87dd",
+    "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/fakhri-gajar.png?alt=media&token=98877532-63da-4599-adb7-2fa95d84b66a",
 };
 
 export const socials = [
@@ -144,6 +144,25 @@ export const skills = [
 ];
 
 export const experiences = [
+  {
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Companies%2Fcompany-6.jpg?alt=media&token=2f9f11e9-27dd-4b51-8b41-bbfa7ffcc3b8",
+    position: "Information and Communication Technology Teacher (English)",
+    company: "Hadaf Stars Campus",
+    date: "September 2025 - Present",
+    description:
+      "As an ICT teacher for students in grades 3 to 7, I design and deliver engaging lessons that introduce young learners to the fundamentals of computer science, digital literacy, and safe technology use. My teaching focuses on helping students understand algorithms, logical thinking, and problem-solving through interactive platforms. I create a supportive and motivating classroom environment where students explore the basics of programming, data handling, and information processing. By combining theory with hands-on activities, I aim to develop their curiosity about technology and prepare them for more advanced ICT concepts in the future.",
+  },
+  ,
+  {
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Companies%2Fcompany-5.png?alt=media&token=6a570daf-0372-4ee1-9de9-8b31db3636cf",
+    position: "Mentor — Məktəblilərarası Milli Hakaton",
+    company: "Algoritmika",
+    date: "August 2025 - Present",
+    description: `As a Mentor at the Məktəblilərarası Milli Hakaton (National Hackathon for School Students), I guided semifinalist teams in developing their technology projects by providing technical support and mentorship throughout the process. My role involved assisting students in building web-based and Python projects using tools such as HTML, CSS, Flask, Pandas, PyQt, and PyGame. I focused on fostering their creativity, teamwork, and problem-solving skills while helping them apply programming concepts in real-world scenarios. Through this experience, I strengthened my communication and leadership abilities, gained valuable mentoring experience, and contributed to inspiring the next generation of young technologists.`,
+    skills: ["HTML", "CSS", "Flask", "Pandas", "PyQT", "PyGame"],
+  },
   {
     image:
       "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Companies%2Fcompany-4.jpg?alt=media&token=48b7deb9-88bf-4892-ab00-f125b1c55585",

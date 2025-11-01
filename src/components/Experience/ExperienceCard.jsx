@@ -23,7 +23,7 @@ function ExperienceCard({
   settingFirstPartOfText(experienceList.description);
 
   return (
-    <div className="experience__card">
+    <div className="experience__card" data-aos="fade-up">
       <div className="experience__card-left">
         <span></span>
         <span></span>
@@ -67,14 +67,18 @@ function ExperienceCard({
               )}
             </p>
           </div>
-          <div className="experience__card-skills">
-            <p>Skills:</p>
-            <ul>
-              {experienceList.skills.map((skill, index) => {
-                return <li key={index}>{skill}</li>;
-              })}
-            </ul>
-          </div>
+          {experienceList.skills ? (
+            <div className="experience__card-skills">
+              <p>Skills:</p>
+              <ul>
+                {experienceList.skills?.map((skill, index) => {
+                  return <li key={index}>{skill}</li>;
+                })}
+              </ul>
+            </div>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </div>

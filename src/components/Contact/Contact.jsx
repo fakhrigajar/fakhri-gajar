@@ -42,7 +42,7 @@ function Contact() {
       <div className="contact__container">
         <div className="contact__top">Contact me</div>
         <div className="form">
-          <div className="contact-info">
+          <div className="contact-info" data-aos="slide-right">
             <h3 className="title">Let's get in touch</h3>
             <p className="text">{contactDetail.description}</p>
 
@@ -71,7 +71,12 @@ function Contact() {
             <span className="circle one"></span>
             <span className="circle two"></span>
 
-            <form ref={form} onSubmit={sendMail} autoComplete="off">
+            <form
+              ref={form}
+              onSubmit={sendMail}
+              autoComplete="off"
+              data-aos="slide-left"
+            >
               <div className={`input-container`}>
                 <TextField
                   id="outlined-basic"
