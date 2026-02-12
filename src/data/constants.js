@@ -28,7 +28,7 @@ export const socials = [
   {
     name: "Github",
     icon: "ri-github-fill",
-    value: "https://github.com/itzjustfitb",
+    value: "https://github.com/fakhrigajar",
   },
 ];
 
@@ -221,24 +221,6 @@ export const experiences = [
   },
 ];
 
-// {
-//     image:
-//       "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Companies%2Fcompany-1.jpg?alt=media&token=a1b936e0-c1c0-483e-be30-afda217d801b",
-//     position: "Hackaton • Frontend Developer",
-//     company: `"Bir Könüllü" Tələbələrin Əməkdaşlığı Təşkilatı`,
-//     date: "Apr 2024 - Apr 2024",
-//     description: `I participated in the Azerbaijan 2030 and Sustainable Development National Student Competition on April 26-28. In the direction of "increasing the use of renewable energy sources", as a "Tərəqqi" team, we thought of ideas that we could integrate with our field, we all worked hard and researched. We presented the project called "PiezoGen". At the same time, we had fun, learned and made friends with each other. We may not have won, but we will never forget the experience and good memories`,
-//     skills: [
-//       "Teamwork",
-//       "Front-End Development",
-//       "JavaScript",
-//       "Problem Solving",
-//       "Analytical Skills",
-//       "React.js",
-//       "Microsoft PowerPoint",
-//     ],
-//   },
-
 export const projects = [
   {
     name: "FITB Movies",
@@ -352,7 +334,7 @@ export const contactDetail = {
       icon: "ri-facebook-fill",
     },
     {
-      value: "https://github.com/itzjustfitb",
+      value: "https://github.com/fakhrigajar",
       icon: "ri-github-line",
     },
     {

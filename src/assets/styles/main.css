@@ -868,6 +868,28 @@ header .header__container .hamburger-react {
     justify-content: center;
     align-items: center;
   }
+  #about .hero__container .hero__right .hero__right-image {
+    position: relative;
+  }
+  #about .hero__container .hero__right .hero__right-image .BgAnimation__svg {
+    min-width: 200px;
+  }
+  #about .hero__container .hero__right .hero__right-image img {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
   #about .hero__container .hero__right svg {
     height: 300px;
   }
