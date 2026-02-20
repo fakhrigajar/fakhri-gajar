@@ -1,3 +1,5 @@
+import ExperienceCard from "../components/Experience/ExperienceCard";
+
 export const bio = {
   name: "Fakhri Gajar",
   description:

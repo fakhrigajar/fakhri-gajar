@@ -1,5 +1,7 @@
-import "./assets/styles/main.css";
 import "remixicon/fonts/remixicon.css";
+import "./assets/styles/main.css";
+import "./assets/styles/style.css";
+import "./assets/styles/tailwind.css";
 import "react-toastify/dist/ReactToastify.css";
 import Experience from "./components/Experience/Experience";
 import Footer from "./components/Footer/Footer";

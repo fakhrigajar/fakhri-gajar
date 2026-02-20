@@ -1,0 +1,26 @@
+.hamburger-react {
+  display: none;
+  z-index: 1;
+}
+
+@media screen and (max-width: 1024px) {
+  .hamburger-react {
+    color: white;
+    display: initial;
+  }
+}
+
+.header-shadow {
+  box-shadow:
+    rgba(28, 28, 39, 0.16) 0px 3px 6px,
+    rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+section {
+  padding-top: 150px !important;
+  padding-bottom: 100px !important;
+}
+
+.vertical-timeline::before {
+  background-color: #854ce6 !important;
+}
