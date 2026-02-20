@@ -43,44 +43,40 @@ function ExperienceCard({
         />
       }
     >
-      <div className=" gap-0">
+      <div>
         <div className="flex flex-col gap-3">
-          <h1 className="text-xl font-bold">{experienceList.company}</h1>
-          <h3>{experienceList.position}</h3>
+          <h1 className="text-xl font-bold text-text-primary">
+            {experienceList.company}
+          </h1>
+          <h3 className="text-text-secondary text-xs desktop:text-sm">
+            {experienceList.position}
+          </h3>
         </div>
         <div className="flex flex-col gap-3">
-          <div className="text-text-secondary text-sm font-medium leading-[1.3] text-justify">
-            <div
-              className={`experience__card-content ${
-                readMoreActive ? `read-more-active` : ``
-              }`}
-            >
-              <p>
+          <p className="text-text-muted">
+            {readMoreActive.index === id && readMoreActive.boolean
+              ? experienceList.description
+              : firstPartOfDescription}
+            {firstPart !== null ? (
+              <span
+                className="text-white pl-[5px] font-medium cursor-pointer"
+                onClick={() => {
+                  setActiveCard(!activeCard);
+                  setReadMoreActive({
+                    ...readMoreActive,
+                    index: id,
+                    boolean: activeCard,
+                  });
+                }}
+              >
                 {readMoreActive.index === id && readMoreActive.boolean
-                  ? experienceList.description
-                  : firstPartOfDescription}
-                {firstPart !== null ? (
-                  <span
-                    className="text-white pl-[5px] font-medium cursor-pointer"
-                    onClick={() => {
-                      setActiveCard(!activeCard);
-                      setReadMoreActive({
-                        ...readMoreActive,
-                        index: id,
-                        boolean: activeCard,
-                      });
-                    }}
-                  >
-                    {readMoreActive.index === id && readMoreActive.boolean
-                      ? "show less..."
-                      : "read more..."}
-                  </span>
-                ) : (
-                  ""
-                )}
-              </p>
-            </div>
-          </div>
+                  ? "show less..."
+                  : "read more..."}
+              </span>
+            ) : (
+              ""
+            )}
+          </p>
           <ul className="flex flex-wrap gap-2">
             {experienceList.skills ? (
               <>

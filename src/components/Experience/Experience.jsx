@@ -14,10 +14,10 @@ function Experience() {
 
   return (
     <section id="experience">
-      <div className="flex flex-col gap-20 items-center">
+      <div className="w-4/5 flex flex-col gap-20 items-center">
         <div className="flex flex-col gap-[10px] items-center">
           <h1 className="font-semibold text-[40px] text-white">My Journey</h1>
-          <p className="text-text-secondary text-lg">
+          <p className="text-text-secondary text-lg text-center">
             Here are some of my skills on which I have been working on for the
             past 2 years.
           </p>

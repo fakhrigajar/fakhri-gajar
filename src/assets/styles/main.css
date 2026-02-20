@@ -5,6 +5,7 @@ body {
 
 html {
   scroll-behavior: smooth;
+  background-color: rgba(25, 25, 36, 0);
 }
 
 html,
