@@ -8,14 +8,14 @@ function Contact() {
   const [inputs, setInputs] = useState({
     name: "",
     email: "",
-    phone: "",
+    subject: "",
     message: "",
   });
   const form = useRef();
   const sendMail = (e) => {
     e.preventDefault();
     if (
-      inputs.phone === "" &&
+      inputs.subject === "" &&
       inputs.name === "" &&
       inputs.message === "" &&
       inputs.email === ""
@@ -24,15 +24,22 @@ function Contact() {
       return inputs;
     }
     emailjs
-      .sendForm("service_emux3fs", "template_o54layb", form.current, {
+      .sendForm("service_ntjgx6t", "template_2ergwl7", form.current, {
         publicKey: "bzj7XofiRWUJhFwDn",
       })
-      .then(() => toast.success("Message sent succesfully"))
-      .catch(() => toast.error("There is an error!"));
+      .then((e) => {
+        toast.success("Message sent succesfully");
+        console.log(e);
+      })
+      .catch((e) => {
+        toast.error("There is an error!");
+        console.log(e);
+      });
+
     setInputs({
       name: "",
       email: "",
-      phone: "",
+      subject: "",
       message: "",
     });
   };
@@ -82,6 +89,7 @@ function Contact() {
                   id="outlined-basic"
                   label="Your Name"
                   value={inputs.name}
+                  name="name"
                   type="text"
                   onChange={(e) =>
                     setInputs({ ...inputs, name: e.target.value })
@@ -95,6 +103,7 @@ function Contact() {
                   label="Email"
                   value={inputs.email}
                   type="email"
+                  name="email"
                   onChange={(e) =>
                     setInputs({ ...inputs, email: e.target.value })
                   }
@@ -104,11 +113,12 @@ function Contact() {
               <div className={`input-container`}>
                 <TextField
                   id="outlined-basic"
-                  label="Phone"
-                  value={inputs.phone}
-                  type="number"
+                  label="Subject"
+                  value={inputs.subject}
+                  name="subject"
+                  type="text"
                   onChange={(e) =>
-                    setInputs({ ...inputs, phone: e.target.value })
+                    setInputs({ ...inputs, subject: e.target.value })
                   }
                   variant="outlined"
                 />
@@ -118,6 +128,7 @@ function Contact() {
                   id="outlined-multiline-flexible"
                   label="Message"
                   value={inputs.message}
+                  name="message"
                   onChange={(e) =>
                     setInputs({ ...inputs, message: e.target.value })
                   }

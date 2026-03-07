@@ -1,5 +1,3 @@
-import React from "react";
-
 function SkillCard({ skill, index }) {
   return (
     <div
@@ -7,7 +5,7 @@ function SkillCard({ skill, index }) {
       data-aos="zoom-in"
     >
       <div className="p-[5px] flex items-center justify-center">
-        <img className="w-5" src={skill.image} alt={`Skill ${index}`} />
+        <img className="w-5 h-5" src={skill.image} alt={`Skill ${index}`} />
       </div>
       <p>{skill.label}</p>
     </div>

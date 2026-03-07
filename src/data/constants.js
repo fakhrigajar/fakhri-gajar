@@ -6,7 +6,7 @@ export const bio = {
     "I’m a passionate Frontend Developer focused on crafting clean, responsive, and user-friendly web interfaces. I love turning ideas into interactive digital experiences using modern web technologies.",
   roles: ["Frontend Developer", "Coder", "Programmer"],
   resume:
-    "https://drive.google.com/file/d/1EX1MmNCjlqlO8EBgObphCn-YcZM2-Y2p/view?usp=sharing",
+    "https://drive.google.com/file/d/1OF5OBRZb6AWol0lO9-q3QW_BKwSN17Jf/view?usp=sharing",
   image:
     "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/fakhri-gajar.png?alt=media&token=98877532-63da-4599-adb7-2fa95d84b66a",
 };

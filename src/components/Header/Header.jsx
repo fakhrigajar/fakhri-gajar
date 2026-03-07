@@ -27,10 +27,12 @@ function Header() {
     });
 
     setActiveSection(currentSection);
+    console.log("Current section", currentSection);
   };
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -55,7 +57,14 @@ function Header() {
           <ul className="flex flex-col items-center justify-center gap-[30px] desktop:flex-row desktop:gap-5">
             {navigations.map((navigation, index) => {
               return (
-                <li onClick={() => setIsOpen(false)} key={index}>
+                <li
+                  onClick={() => {
+                    setIsOpen(false);
+                    console.log(navigation.value);
+                    console.log(activeSection);
+                  }}
+                  key={index}
+                >
                   <a
                     className={`${
                       navigation.value === `#` + activeSection
