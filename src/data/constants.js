@@ -1,4 +1,33 @@
-import ExperienceCard from "../components/Experience/ExperienceCard";
+import jsImg from "../assets/images/js.png";
+import cssImg from "../assets/images/css.svg";
+import reactImg from "../assets/images/react.png";
+import htmlImg from "../assets/images/html.png";
+import nextImg from "../assets/images/next-js.webp";
+import bootstrapImg from "../assets/images/bootstrap.svg";
+import csImg from "../assets/images/cs.svg.png";
+import figmaImg from "../assets/images/Figma.png";
+import firebaseImg from "../assets/images/firebase.png";
+import githubImg from "../assets/images/github.png";
+import muiImg from "../assets/images/mui.png";
+import reduxImg from "../assets/images/redux.png";
+import sassImg from "../assets/images/sass.png";
+import nodeImg from "../assets/images/nodejs.svg";
+import expressImg from "../assets/images/express.png";
+import tailwindImg from "../assets/images/tailwind.png";
+import postmanImg from "../assets/images/postman.png";
+import scratchImg from "../assets/images/scratch.svg";
+import hscImg from "../assets/images/hsc.png";
+import itbrainsImg from "../assets/images/itbrains.jpg";
+import algoritmikaImg from "../assets/images/alqoritmika.png";
+import companyImg from "../assets/images/company.jpg";
+import jetacademyImg from "../assets/images/jet-academy.jpg";
+import meImg from "../assets/images/me.png";
+import fitbMoviesImg from "../assets/images/fitb-movies.png";
+import fitbFinderImg from "../assets/images/fitb-finder.png";
+import jerseyStoreImg from "../assets/images/jersey-store.png";
+import fitbGameImg from "../assets/images/fitb-game.png";
+import fitbNotepadImg from "../assets/images/fitb-notepad.png";
+import tinkercadImg from "../assets/images/tinkercad.png";
 
 export const bio = {
   name: "Fakhri Gajar",
@@ -7,8 +36,7 @@ export const bio = {
   roles: ["Frontend Developer", "Coder", "Programmer"],
   resume:
     "https://drive.google.com/file/d/1OF5OBRZb6AWol0lO9-q3QW_BKwSN17Jf/view?usp=sharing",
-  image:
-    "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/fakhri-gajar.png?alt=media&token=98877532-63da-4599-adb7-2fa95d84b66a",
+  image: meImg,
 };
 
 export const socials = [
@@ -60,96 +88,86 @@ export const navigations = [
 export const skills = [
   {
     label: "Javascript",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Skills%2Fjs.png?alt=media&token=c68ff204-ccca-4d5b-8887-ef586ff2db2a",
+    image: jsImg,
   },
   {
     label: "React JS",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Skills%2Freact.webp?alt=media&token=acb0d5b8-1764-4a14-9f28-c110c1d797b9",
+    image: reactImg,
   },
   {
     label: "GitHub",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Skills%2Fgithub.png?alt=media&token=3665db00-fca7-4eb1-acc0-f6916f82f151",
+    image: githubImg,
   },
   {
     label: "CSS",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Skills%2Fcss.png?alt=media&token=3077d40f-42d4-4bf5-a0be-5c927f9d6b22",
+    image: cssImg,
   },
   {
     label: "HTML",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Skills%2Fhtml.png?alt=media&token=ad6c3561-5086-4621-9443-b0a032f9bf19",
+    image: htmlImg,
   },
   {
     label: "Next JS",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Skills%2Fnext.png?alt=media&token=01de5fee-103b-42ef-b4b2-a3722219a7eb",
+    image: nextImg,
   },
   {
     label: "Bootstrap",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Skills%2Fbootstrap.png?alt=media&token=a6b4661f-96cc-47a2-8933-635a1c6ad3d7",
+    image: bootstrapImg,
   },
   {
     label: "C#",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Skills%2Fcs.png?alt=media&token=8756ce32-f3f6-4a29-91db-8214c0d62586",
+    image: csImg,
   },
   {
     label: "Figma",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Skills%2Ffigma.png?alt=media&token=f1ab2e1e-187d-4eae-9e3a-81cfa36ef1bf",
+    image: figmaImg,
   },
   {
     label: "Firebase",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Skills%2Ffirebase.png?alt=media&token=c8204818-8c1a-4315-afa6-b4cb854d58dd",
+    image: firebaseImg,
   },
   {
     label: "Material UI",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Skills%2Fmui.png?alt=media&token=6a5942b3-50fc-44dd-b1e3-dea7771c9207",
+    image: muiImg,
   },
   {
     label: "Redux / Redux Toolkit",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Skills%2Fredux.png?alt=media&token=1c3b3b81-851d-4b1b-8ede-0a1c9b70c926",
+    image: reduxImg,
   },
   {
     label: "SASS/SCSS",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Skills%2Fscss.webp?alt=media&token=c3cfe82a-ed9e-457e-97b8-3743d148b9f3",
+    image: sassImg,
   },
   {
     label: "Tailwind CSS",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Skills%2Ftailwind.png?alt=media&token=3baa314f-117e-4fb1-ba57-fef00e300980",
+    image: tailwindImg,
   },
   {
     label: "Node JS",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Skills%2Fnodejs-1-logo-png-transparent.png?alt=media&token=ccfed37c-2232-4cf1-8ca8-2a97bc45e302",
+    image: nodeImg,
   },
   {
     label: "Express JS",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Skills%2FExpress.png?alt=media&token=22ef20c0-2bc9-4226-88fb-3629c4aca5f7",
+    image: expressImg,
   },
   {
     label: "Postman",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Skills%2Fpostman-icon.svg?alt=media&token=d3922f7a-1887-4e56-bf81-0db36707c932",
+    image: postmanImg,
+  },
+  {
+    label: "Scratch",
+    image: scratchImg,
+  },
+  {
+    label: "Tinkercad",
+    image: tinkercadImg,
   },
 ];
 
 export const experiences = [
   {
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Companies%2Fcompany-6.jpg?alt=media&token=2f9f11e9-27dd-4b51-8b41-bbfa7ffcc3b8",
-    position: "Information and Communication Technology Teacher (English)",
+    image: hscImg,
+    position: "ICT Instructor",
     company: "Hadaf Stars Campus",
     date: "September 2025 - Present",
     description:
@@ -157,8 +175,7 @@ export const experiences = [
   },
   ,
   {
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Companies%2Fcompany-5.png?alt=media&token=6a570daf-0372-4ee1-9de9-8b31db3636cf",
+    image: algoritmikaImg,
     position: "Mentor — Məktəblilərarası Milli Hakaton",
     company: "Algoritmika",
     date: "August 2025 - Present",
@@ -166,8 +183,7 @@ export const experiences = [
     skills: ["HTML", "CSS", "Flask", "Pandas", "PyQT", "PyGame"],
   },
   {
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Companies%2Fcompany-4.jpg?alt=media&token=48b7deb9-88bf-4892-ab00-f125b1c55585",
+    image: itbrainsImg,
     position: "Frontend Developer (Mentor)",
     company: "IT Brains",
     date: "September 2024 - November 2024",
@@ -183,8 +199,7 @@ export const experiences = [
   },
 
   {
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Companies%2Fcompany-3.jpg?alt=media&token=51ed8beb-9446-4c19-847a-834a82433558",
+    image: companyImg,
     position: "Frontend Developer (Startup)",
     company: "NEXT US",
     date: "May 2024 - August 2024",
@@ -204,8 +219,7 @@ export const experiences = [
   },
 
   {
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Companies%2Fcompany-2.jpg?alt=media&token=1c1247ba-49ef-40ee-b92f-607af4f27799",
+    image: jetacademyImg,
     position: "Frontend Developer (Intern)",
     company: "JET Academy",
     date: "May 2024 - June 2024",
@@ -226,8 +240,7 @@ export const experiences = [
 export const projects = [
   {
     name: "FITB Movies",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Screenshot%202025-04-29%20at%2000.52.53.jpeg?alt=media&token=f236b153-4c01-4aa6-a4bd-9bb06d1be879",
+    image: fitbMoviesImg,
     skills: [
       "HTML",
       "CSS",
@@ -248,8 +261,7 @@ export const projects = [
   },
   {
     name: "FITB NotePad +",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Screenshot%202025-04-29%20at%2001.01.24.png?alt=media&token=e25c7d61-cbca-49a2-9408-bac621e7853b",
+    image: fitbNotepadImg,
     skills: [
       "HTML",
       "CSS",
@@ -268,8 +280,7 @@ export const projects = [
 
   {
     name: "FITB Game",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/FITB%20Game.png?alt=media&token=01afb038-6caa-40b9-9309-22c1da0d685f",
+    image: fitbGameImg,
     skills: ["HTML", "CSS", "Javascript", "SASS/SCSS"],
     date: "Aug 2023 - Sep 2023",
     category: "E-Commerce",
@@ -280,8 +291,7 @@ export const projects = [
   },
   {
     name: "Jersey Store",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/Jersey%20Store.png?alt=media&token=6271b1ee-7ae4-4ce7-bb6a-0173b9ea5da8",
+    image: jerseyStoreImg,
     skills: [
       "HTML",
       "CSS",
@@ -301,8 +311,7 @@ export const projects = [
   },
   {
     name: "FITB Finder",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/fakhri-gajar.appspot.com/o/FITB%20Finder.png?alt=media&token=a10d5b31-610e-4704-823d-8951a53ec15d",
+    image: fitbFinderImg,
     skills: ["HTML", "CSS", "Javascript", "SASS/SCSS", "React JS", "Axios"],
     date: "Mar 2024 - Mar 2024",
     category: "Web App",
