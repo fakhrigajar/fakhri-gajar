@@ -76,10 +76,10 @@ export const navigations = [
     label: "Projects",
     value: "#projects",
   },
-  {
-    label: "Education",
-    value: "#education",
-  },
+  // {
+  //   label: "Education",
+  //   value: "#education",
+  // },
   {
     label: "Experience",
     value: "#experience",

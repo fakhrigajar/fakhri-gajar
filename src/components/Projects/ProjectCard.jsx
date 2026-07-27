@@ -26,7 +26,7 @@ function ProjectCard({ projectsList }) {
   return (
     <div
       data-aos="zoom-in"
-      className="flex flex-col rounded-2xl border-2 border-surface-1 border-solid bg-surface-card shadow-black/20 duration-300 hover:-translate-y-1 hover:border-primary"
+      className="flex flex-col rounded-2xl border-2 border-surface-1 border-solid bg-surface-card shadow-black/20 duration-300 hover:-translate-y-1 hover:border-primary group"
     >
       <a
         href={liveLink}
@@ -101,7 +101,7 @@ function ProjectCard({ projectsList }) {
           href={codeLink}
           target="_blank"
           rel="noreferrer"
-          className="mt-auto flex border-b-2 border-solid w-fit items-center gap-1.5 self-end text-sm font-medium text-text-secondary duration-300 hover:text-primary"
+          className="mt-auto flex border-b-2 border-solid hover:border-primary border-text-secondary w-fit items-center gap-1.5 self-end text-sm font-medium text-text-secondary duration-300 hover:text-primary"
         >
           <i className="ri-github-fill"></i>
           View Code

@@ -18,8 +18,8 @@ function Experience() {
         <div className="flex flex-col gap-[10px] items-center">
           <h1 className="font-semibold text-[40px] text-white">My Journey</h1>
           <p className="text-text-secondary text-lg text-center">
-            Here are some of my skills on which I have been working on for the
-            past 2 years.
+            Here&apos;s a timeline of my professional experience and the
+            milestones along my journey so far.
           </p>
         </div>
 

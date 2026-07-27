@@ -31,10 +31,24 @@ section {
 
 .vertical-timeline::before {
   background-color: #854ce6 !important;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
 }
 
 .skills-track {
-  animation: scrollSkills 20s linear infinite;
+  animation: scrollSkills 50s linear infinite;
 }
 
 .skills-track:hover {
@@ -56,7 +70,6 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: 0.4s;
 }
 
 .pl {
@@ -73,8 +86,7 @@ section {
 }
 
 .pl__ring {
-  stroke: hsla(223, 10%, 10%, 0.1);
-  transition: stroke 0.3s;
+  stroke: #232332;
 }
 
 .pl__worm1 {
@@ -89,12 +101,6 @@ section {
 .pl__worm3 {
   animation-name: worm3;
   transform-origin: 144px 88px;
-}
-
-@media (prefers-color-scheme: dark) {
-  .pl__ring {
-    stroke: #232332;
-  }
 }
 
 @keyframes worm1 {

@@ -44,7 +44,7 @@ function Header() {
       <div className="w-4/5 flex items-center justify-between">
         <div>
           <a
-            className="text-xl desktop:text-4xl font-extrabold text-white no-underline"
+            className="text-xl desktop:text-2xl font-extrabold text-white no-underline"
             href="/"
           >
             Fakhri Gajar.
@@ -67,7 +67,7 @@ function Header() {
                       navigation.value === `#` + activeSection
                         ? `text-primary after:w-full`
                         : `text-text-secondary after:w-0`
-                    } text-4xl desktop:text-base no-underline font-semibold relative duration-300 hover:text-primary hover:after:w-full after:absolute after:-bottom-[7px] after:left-2/4 after:-translate-x-2/4 after:bg-primary after:h-1 after:duration-300`}
+                    } text-4xl desktop:text-lg no-underline font-semibold relative duration-300 hover:text-primary hover:after:w-full after:absolute after:-bottom-[7px] after:left-2/4 after:-translate-x-2/4 after:bg-primary after:h-1 after:duration-300`}
                     href={navigation.value}
                   >
                     {navigation.label}

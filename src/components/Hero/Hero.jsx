@@ -2,14 +2,23 @@ import HeroImage from "./HeroImage";
 import { Typewriter } from "react-simple-typewriter";
 import { DefaultBtn } from "../components.style";
 import { bio } from "../../data/constants";
+import GridPattern from "../Custom/GridPattern";
+import { cn } from "../../lib/utils";
 
 function Hero() {
   return (
     <section
       id="about"
-      className="text-white flex justify-center items-center bg-surface-2 pt-[100px] desktop:pt-[140px]"
+      className="relative overflow-hidden text-white flex justify-center items-center bg-surface-2 pt-[100px] desktop:pt-[140px]"
     >
-      <div className="w-4/5 flex flex-col-reverse desktop:flex-row desktop:justify-between gap-5">
+      <GridPattern
+        className={cn(
+          "stroke-[#1c1c27]",
+          "[mask-image:radial-gradient(600px_circle_at_center,white,transparent)]",
+          "inset-x-0 inset-y-[-30%] h-[160%] skew-y-12",
+        )}
+      />
+      <div className="relative w-4/5 flex flex-col-reverse desktop:flex-row desktop:justify-between desktop:gap-5">
         <div className="w-full text-center desktop:text-left flex flex-col justify-center items-center desktop:items-start gap-[10px] text-xl leading- text-text-primary desktop:w-2/4 desktop:gap-5">
           <h1 className="flex flex-col gap-0 text-4xl font-bold w-full leading-[1.2] text-white desktop:gap-5 desktop:text-5xl">
             Hi, I am <span>{bio.name}</span>

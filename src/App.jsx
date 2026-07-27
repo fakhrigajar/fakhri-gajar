@@ -15,6 +15,7 @@ import Loader from "./components/Loader/Loader";
 import Contact from "./components/Contact/Contact";
 import { ToastContainer } from "react-toastify";
 import Education from "./components/Education/Education";
+import Journey from "./components/Journey/Journey";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -57,8 +58,7 @@ function App() {
       <Hero />
       <Skills />
       <Projects />
-      {/* <Education /> */}
-      <Experience />
+      <Journey />
       <Contact />
       <Footer />
     </>
