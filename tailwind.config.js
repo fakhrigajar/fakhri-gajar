@@ -13,6 +13,7 @@ export default {
           elevated: "#232332",
           card: "#171721",
           footer: "#1c1c27",
+          border: "#2c2640",
         },
         text: {
           primary: "#f2f3f4",
@@ -25,6 +26,9 @@ export default {
       screens: {
         sm: "640px",
         desktop: "1024px",
+      },
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
       },
     },
   },

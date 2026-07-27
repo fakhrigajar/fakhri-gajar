@@ -1,4 +1,3 @@
-import React from "react";
 import HeroImage from "./HeroImage";
 import { Typewriter } from "react-simple-typewriter";
 import { DefaultBtn } from "../components.style";
@@ -8,7 +7,7 @@ function Hero() {
   return (
     <section
       id="about"
-      className="text-white flex justify-center items-center bg-surface-2"
+      className="text-white flex justify-center items-center bg-surface-2 pt-[100px] desktop:pt-[140px]"
     >
       <div className="w-4/5 flex flex-col-reverse desktop:flex-row desktop:justify-between gap-5">
         <div className="w-full text-center desktop:text-left flex flex-col justify-center items-center desktop:items-start gap-[10px] text-xl leading- text-text-primary desktop:w-2/4 desktop:gap-5">

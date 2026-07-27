@@ -1,5 +1,4 @@
 import "remixicon/fonts/remixicon.css";
-import "./assets/styles/main.css";
 import "./assets/styles/style.css";
 import "./assets/styles/tailwind.css";
 import "react-toastify/dist/ReactToastify.css";
@@ -15,6 +14,7 @@ import "aos/dist/aos.css";
 import Loader from "./components/Loader/Loader";
 import Contact from "./components/Contact/Contact";
 import { ToastContainer } from "react-toastify";
+import Education from "./components/Education/Education";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -56,8 +56,9 @@ function App() {
       <Header />
       <Hero />
       <Skills />
-      <Experience />
       <Projects />
+      {/* <Education /> */}
+      <Experience />
       <Contact />
       <Footer />
     </>

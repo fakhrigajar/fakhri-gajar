@@ -1,4 +1,3 @@
-import React from "react";
 import { bio } from "../../data/constants";
 import HeroAnimatedSvg from "../Custom/HeroAnimatedSvg";
 

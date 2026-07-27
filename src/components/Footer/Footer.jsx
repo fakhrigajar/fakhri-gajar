@@ -1,4 +1,3 @@
-import React from "react";
 import { navigations, socials } from "../../data/constants";
 
 function Footer() {

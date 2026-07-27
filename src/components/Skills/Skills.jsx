@@ -15,10 +15,18 @@ function Skills() {
             past 2 years.
           </p>
         </div>
-        <div className="w-full flex flex-wrap gap-[10px] justify-center">
-          {skills.map((skill, index) => {
-            return <SkillCard key={index} skill={skill} index={index} />;
-          })}
+        <div
+          style={{
+            maskImage:
+              "linear-gradient(to right, transparent, #000 10% 90%, transparent)",
+          }}
+          className="w-full overflow-hidden flex"
+        >
+          <div className="w-max flex gap-3 will-change-transform skills-track">
+            {[...skills, ...skills].map((skill, index) => {
+              return <SkillCard key={index} skill={skill} index={index} />;
+            })}
+          </div>
         </div>
       </div>
     </section>

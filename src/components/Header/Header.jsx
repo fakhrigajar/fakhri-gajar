@@ -14,29 +14,28 @@ function Header() {
     setScrollInt(scrollY);
   });
 
-  const handleScroll = () => {
-    const sections = document.querySelectorAll("section");
-    let currentSection = "";
-
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
-      if (window.pageYOffset >= sectionTop - sectionHeight / 3) {
-        currentSection = section.getAttribute("id");
-      }
-    });
-
-    setActiveSection(currentSection);
-    console.log("Current section", currentSection);
-  };
-
   useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll("section");
+      let currentSection = "";
+      const scrollPosition = window.pageYOffset + window.innerHeight / 3;
+
+      sections.forEach((section) => {
+        if (scrollPosition >= section.offsetTop) {
+          currentSection = section.getAttribute("id");
+        }
+      });
+
+      setActiveSection(currentSection);
+    };
+
     window.addEventListener("scroll", handleScroll);
+    handleScroll();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [activeSection]);
+  }, []);
 
   return (
     <header
@@ -60,8 +59,6 @@ function Header() {
                 <li
                   onClick={() => {
                     setIsOpen(false);
-                    console.log(navigation.value);
-                    console.log(activeSection);
                   }}
                   key={index}
                 >
@@ -70,7 +67,7 @@ function Header() {
                       navigation.value === `#` + activeSection
                         ? `text-primary after:w-full`
                         : `text-text-secondary after:w-0`
-                    } text-4xl desktop:text-xl no-underline font-semibold relative duration-300 hover:text-primary hover:after:w-full after:absolute after:-bottom-[7px] after:left-2/4 after:-translate-x-2/4 after:bg-primary after:h-1 after:duration-300`}
+                    } text-4xl desktop:text-base no-underline font-semibold relative duration-300 hover:text-primary hover:after:w-full after:absolute after:-bottom-[7px] after:left-2/4 after:-translate-x-2/4 after:bg-primary after:h-1 after:duration-300`}
                     href={navigation.value}
                   >
                     {navigation.label}

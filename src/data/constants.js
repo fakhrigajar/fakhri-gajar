@@ -71,13 +71,18 @@ export const navigations = [
     label: "Skills",
     value: "#skills",
   },
-  {
-    label: "Experience",
-    value: "#experience",
-  },
+
   {
     label: "Projects",
     value: "#projects",
+  },
+  {
+    label: "Education",
+    value: "#education",
+  },
+  {
+    label: "Experience",
+    value: "#experience",
   },
   {
     label: "Contact me",
@@ -131,7 +136,7 @@ export const skills = [
     image: muiImg,
   },
   {
-    label: "Redux / Redux Toolkit",
+    label: "Redux",
     image: reduxImg,
   },
   {
@@ -173,7 +178,6 @@ export const experiences = [
     description:
       "As an ICT teacher for students in grades 3 to 7, I design and deliver engaging lessons that introduce young learners to the fundamentals of computer science, digital literacy, and safe technology use. My teaching focuses on helping students understand algorithms, logical thinking, and problem-solving through interactive platforms. I create a supportive and motivating classroom environment where students explore the basics of programming, data handling, and information processing. By combining theory with hands-on activities, I aim to develop their curiosity about technology and prepare them for more advanced ICT concepts in the future.",
   },
-  ,
   {
     image: algoritmikaImg,
     position: "Mentor — Məktəblilərarası Milli Hakaton",
@@ -234,6 +238,16 @@ export const experiences = [
       "CSS",
       "SCSS",
     ],
+  },
+];
+
+export const educations = [
+  {
+    institution: "Your Institution Name",
+    degree: "Your Degree / Field of Study",
+    date: "20XX - 20XX",
+    description:
+      "Add a short description of your studies, achievements, or relevant coursework here.",
   },
 ];
 

@@ -1,15 +1,27 @@
+import PropTypes from "prop-types";
+
 function SkillCard({ skill, index }) {
   return (
-    <div
-      className="py-[5px] px-5 flex items-center gap-[7px] duration-300 border-2 border-solid rounded-2xl border-text-muted hover:border-primary"
-      data-aos="zoom-in"
-    >
-      <div className="p-[5px] flex items-center justify-center">
-        <img className="w-5 h-5" src={skill.image} alt={`Skill ${index}`} />
+    <div className="w-20 h-30 p-3 flex-shrink-0 group box-content flex flex-col justify-center items-center gap-[7px] duration-300 border-2 border-solid rounded-xl border-text-muted hover:border-primary">
+      <div className="h-11 flex items-center">
+        <img
+          className="w-11 opacity-55 grayscale-[1] group-hover:grayscale-0 group-hover:opacity-100 duration-200"
+          src={skill.image}
+          alt={`Skill ${index}`}
+        />
       </div>
-      <p>{skill.label}</p>
+
+      <p className="text-text-secondary text-[11px]">{skill.label}</p>
     </div>
   );
 }
+
+SkillCard.propTypes = {
+  skill: PropTypes.shape({
+    label: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+  }).isRequired,
+  index: PropTypes.number.isRequired,
+};
 
 export default SkillCard;
