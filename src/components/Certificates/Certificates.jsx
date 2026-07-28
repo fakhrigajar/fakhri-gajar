@@ -1,8 +1,46 @@
 import { useSiteContent } from "../../context/site-content-context";
 import CertificateCard from "./CertificateCard";
 
+const MONTHS = [
+  "jan",
+  "feb",
+  "mar",
+  "apr",
+  "may",
+  "jun",
+  "jul",
+  "aug",
+  "sep",
+  "oct",
+  "nov",
+  "dec",
+];
+
+function parseCertificateDate(date) {
+  if (!date) return null;
+  const yearMatch = date.match(/\d{4}/);
+  if (!yearMatch) return null;
+  const year = Number(yearMatch[0]);
+  const monthMatches = [...date.toLowerCase().matchAll(/jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec/g)];
+  const monthIndex =
+    monthMatches.length > 0
+      ? MONTHS.indexOf(monthMatches[monthMatches.length - 1][0])
+      : 0;
+  return year * 12 + monthIndex;
+}
+
+function byDateDesc(a, b) {
+  const dateA = parseCertificateDate(a.date);
+  const dateB = parseCertificateDate(b.date);
+  if (dateA === null && dateB === null) return 0;
+  if (dateA === null) return 1;
+  if (dateB === null) return -1;
+  return dateB - dateA;
+}
+
 function Certificates() {
   const { certificates } = useSiteContent();
+  const sortedCertificates = [...certificates].sort(byDateDesc);
 
   return (
     <section
@@ -18,7 +56,7 @@ function Certificates() {
         </div>
 
         <div className="grid w-full grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-5 desktop:grid-cols-[repeat(auto-fill,minmax(300px,1fr))] desktop:gap-5">
-          {certificates.map((certificate, index) => (
+          {sortedCertificates.map((certificate, index) => (
             <CertificateCard key={index} certificate={certificate} />
           ))}
         </div>
