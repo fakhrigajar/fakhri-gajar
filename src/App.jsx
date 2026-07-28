@@ -16,6 +16,8 @@ import Contact from "./components/Contact/Contact";
 import { ToastContainer } from "react-toastify";
 import Education from "./components/Education/Education";
 import Journey from "./components/Journey/Journey";
+import Certificates from "./components/Certificates/Certificates";
+import { SiteContentProvider } from "./context/SiteContentContext";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -39,7 +41,7 @@ function App() {
   }, []);
 
   return (
-    <>
+    <SiteContentProvider>
       {isLoading ? <Loader /> : ""}
       <ToastContainer
         position="top-center"
@@ -58,10 +60,12 @@ function App() {
       <Hero />
       <Skills />
       <Projects />
+      <Education />
       <Journey />
+      <Certificates />
       <Contact />
       <Footer />
-    </>
+    </SiteContentProvider>
   );
 }
 

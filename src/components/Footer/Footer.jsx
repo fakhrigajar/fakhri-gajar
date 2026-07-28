@@ -1,12 +1,19 @@
-import { navigations, socials } from "../../data/constants";
+import { navigations } from "../../data/constants";
+import { useSiteContent } from "../../context/site-content-context";
+
+const footerLinks = navigations.flatMap((navigation) =>
+  navigation.children ? navigation.children : [navigation],
+);
 
 function Footer() {
+  const { socials } = useSiteContent();
+
   return (
     <footer className="py-10 flex items-center justify-center bg-surface-1">
       <div className="w-3/4 flex flex-col items-center gap-[20px] text-text-muted">
         <nav>
           <ul className="hidden sm:flex gap-[20px]">
-            {navigations.map((navigation, index) => {
+            {footerLinks.map((navigation, index) => {
               return (
                 <li key={index}>
                   <a

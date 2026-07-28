@@ -79,7 +79,7 @@ function ExperienceCard({
             )}
           </p>
           <ul className="flex flex-wrap gap-2">
-            {experienceList.skills ? (
+            {experienceList.skills?.length > 0 ? (
               <>
                 <h1>Skills:</h1>
                 {experienceList.skills.map((experience, index) => (

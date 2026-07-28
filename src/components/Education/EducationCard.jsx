@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 function EducationCard({ educationList }) {
-  const { institution, degree, date, description } = educationList;
+  const { institution, degree, date } = educationList;
 
   return (
     <div
@@ -21,8 +21,6 @@ function EducationCard({ educationList }) {
         </h3>
         <p className="text-sm text-text-secondary">{degree}</p>
       </div>
-
-      <p className="text-sm leading-relaxed text-text-muted">{description}</p>
     </div>
   );
 }

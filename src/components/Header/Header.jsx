@@ -55,6 +55,69 @@ function Header() {
         >
           <ul className="flex flex-col items-center justify-center gap-[30px] desktop:flex-row desktop:gap-5">
             {navigations.map((navigation, index) => {
+              if (navigation.children) {
+                const isChildActive = navigation.children.some(
+                  (child) => child.value === `#` + activeSection,
+                );
+
+                return (
+                  <li
+                    key={index}
+                    className="group relative flex flex-col items-center gap-[30px] desktop:gap-0"
+                  >
+                    <span
+                      className={`${
+                        isChildActive
+                          ? `text-primary after:w-full`
+                          : `text-text-secondary after:w-0`
+                      } flex cursor-default items-center gap-1 text-4xl desktop:text-lg no-underline font-semibold relative duration-300 group-hover:text-primary group-hover:after:w-full after:absolute after:-bottom-[7px] after:left-2/4 after:-translate-x-2/4 after:bg-primary after:h-1 after:duration-300`}
+                    >
+                      {navigation.label}
+                      <i className="ri-arrow-down-s-line hidden desktop:inline text-base"></i>
+                    </span>
+
+                    <ul className="flex flex-col items-center gap-[30px] desktop:hidden">
+                      {navigation.children.map((child) => (
+                        <li
+                          key={child.value}
+                          onClick={() => setIsOpen(false)}
+                        >
+                          <a
+                            className={`${
+                              child.value === `#` + activeSection
+                                ? `text-primary`
+                                : `text-text-secondary`
+                            } text-2xl no-underline font-medium duration-300 hover:text-primary`}
+                            href={child.value}
+                          >
+                            {child.label}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="invisible absolute left-1/2 top-full z-20 hidden w-52 -translate-x-1/2 pt-3 opacity-0 duration-200 desktop:block group-hover:visible group-hover:opacity-100">
+                      <ul className="flex w-full flex-col gap-1 rounded-xl border border-surface-border bg-surface-card p-2 shadow-2xl">
+                        {navigation.children.map((child) => (
+                          <li key={child.value}>
+                            <a
+                              className={`${
+                                child.value === `#` + activeSection
+                                  ? `bg-primary/10 text-primary`
+                                  : `text-text-secondary`
+                              } block rounded-lg px-3 py-2 text-sm no-underline font-medium duration-200 hover:bg-primary/10 hover:text-primary`}
+                              href={child.value}
+                            >
+                              {child.label}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </li>
+                );
+              }
+
               return (
                 <li
                   onClick={() => {

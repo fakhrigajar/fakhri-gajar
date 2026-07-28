@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { experiences } from "../../data/constants";
+import { useSiteContent } from "../../context/site-content-context";
 import ExperienceCard from "./ExperienceCard";
 
 import "react-vertical-timeline-component/style.min.css";
@@ -7,6 +7,7 @@ import "react-vertical-timeline-component/style.min.css";
 import { VerticalTimeline } from "react-vertical-timeline-component";
 
 function Experience() {
+  const { experiences } = useSiteContent();
   const [readMoreActive, setReadMoreActive] = useState({
     index: "",
     boolean: "",

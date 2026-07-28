@@ -1,7 +1,9 @@
-import { educations } from "../../data/constants";
+import { useSiteContent } from "../../context/site-content-context";
 import EducationCard from "./EducationCard";
 
 function Education() {
+  const { educations } = useSiteContent();
+
   return (
     <section
       id="education"
@@ -15,7 +17,7 @@ function Education() {
             educational details are as follows.
           </p>
         </div>
-        <div className="grid w-full grid-cols-1 gap-5 desktop:grid-cols-2">
+        <div className="w-full flex flex-col gap-5">
           {educations.map((education, index) => (
             <EducationCard key={index} educationList={education} />
           ))}
