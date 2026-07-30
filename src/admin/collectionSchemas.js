@@ -1,6 +1,6 @@
 export const collectionSchemas = {
   skills: {
-    label: "Skills",
+    label: "Skill",
     itemLabel: (item) => item.label || "New skill",
     emptyItem: { label: "", image: "" },
     fields: [
@@ -58,7 +58,7 @@ export const collectionSchemas = {
     ],
   },
   projects: {
-    label: "Projects",
+    label: "Project",
     itemLabel: (item) => item.name || "New project",
     emptyItem: {
       name: "",
@@ -83,19 +83,18 @@ export const collectionSchemas = {
     ],
   },
   certificates: {
-    label: "Certificates",
+    label: "Certificate",
     itemLabel: (item) => item.title || "New certificate",
-    emptyItem: { title: "", issuer: "", date: "", image: "", pdf: "" },
+    emptyItem: { title: "", issuer: "", date: "", image: "" },
     fields: [
       { key: "title", label: "Title", type: "text", required: true },
       { key: "issuer", label: "Issuer", type: "text" },
       { key: "date", label: "Date", type: "date" },
       { key: "image", label: "Image", type: "image" },
-      { key: "pdf", label: "PDF", type: "file" },
     ],
   },
   socials: {
-    label: "Socials",
+    label: "Social",
     itemLabel: (item) => item.name || "New social",
     emptyItem: { name: "", icon: "", value: "" },
     fields: [

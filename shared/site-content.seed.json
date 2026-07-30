@@ -40,7 +40,11 @@
       "image": "/images/experience/itbrains.jpg",
       "position": "Frontend Developer (Mentor)",
       "company": "IT Brains",
-      "date": { "start": "September 2024", "end": "November 2024", "ongoing": false },
+      "date": {
+        "start": "September 2024",
+        "end": "November 2024",
+        "ongoing": false
+      },
       "description": "As a Frontend Developer Mentor, I enjoy sharing what I’ve learned about building clean, responsive, and user-friendly interfaces. I guide beginners through real project experiences, explain concepts in a simple way, and help them avoid the mistakes I made when starting out. It’s about growing together and turning challenges into confidence",
       "skills": [
         "Front-End Development",
@@ -133,7 +137,11 @@
         "Clerk",
         "Material UI"
       ],
-      "date": { "start": "August 2024", "end": "August 2024", "ongoing": false },
+      "date": {
+        "start": "August 2024",
+        "end": "August 2024",
+        "ongoing": false
+      },
       "category": "Web App",
       "links": [
         "https://fitb-notepad-plus.netlify.app/",
@@ -188,99 +196,85 @@
       "title": "Responsive Web Design",
       "issuer": "freeCodeCamp",
       "date": "Oct 2023",
-      "image": "/images/certificates/css-freecodecamp.jpg",
-      "pdf": "/certificates/css-freecodecamp.pdf"
+      "image": "/images/certificates/css-freecodecamp.jpg"
     },
     {
       "title": "CSS (Basic)",
       "issuer": "HackerRank",
       "date": "Oct 2023",
-      "image": "/images/certificates/css-hackerrank.jpg",
-      "pdf": "/certificates/css-hackerrank.pdf"
+      "image": "/images/certificates/css-hackerrank.jpg"
     },
     {
       "title": "Software Development",
       "issuer": "Code Academy",
       "date": "Dec 2023",
-      "image": "/images/certificates/codeacademy.jpg",
-      "pdf": "/certificates/codeacademy.pdf"
+      "image": "/images/certificates/codeacademy.jpg"
     },
     {
       "title": "Getting Started with ReactJS Components",
       "issuer": "Simplilearn SkillUp",
       "date": "Dec 2023",
-      "image": "/images/certificates/react-simplilearn.jpg",
-      "pdf": "/certificates/react-simplilearn.pdf"
+      "image": "/images/certificates/react-simplilearn.jpg"
     },
     {
       "title": "JavaScript Essentials 1",
       "issuer": "Cisco Networking Academy",
       "date": "",
-      "image": "/images/certificates/js-cisco.jpg",
-      "pdf": "/certificates/js-cisco.pdf"
+      "image": "/images/certificates/js-cisco.jpg"
     },
     {
       "title": "JavaScript (Basic)",
       "issuer": "HackerRank",
       "date": "Mar 2024",
-      "image": "/images/certificates/js-hackerrank.jpg",
-      "pdf": "/certificates/js-hackerrank.pdf"
+      "image": "/images/certificates/js-hackerrank.jpg"
     },
     {
       "title": "Front-End Development Course",
       "issuer": "JED Academy",
       "date": "Apr 2024",
-      "image": "/images/certificates/jed-academy.jpg",
-      "pdf": "/certificates/jed-academy.pdf"
+      "image": "/images/certificates/jed-academy.jpg"
     },
     {
       "title": "Teaching English as a Foreign Language",
       "issuer": "TEFL Professional Institute",
       "date": "Jun 2026",
-      "image": "/images/certificates/tefl.jpg",
-      "pdf": "/certificates/tefl.pdf"
+      "image": "/images/certificates/tefl.jpg"
     },
     {
       "title": "Frontend Developer Internship",
       "issuer": "4SİM — Dördüncü Sənaye İnqilabının Təhlili və Koordinasiya Mərkəzi",
       "date": "Aug - Nov 2025",
-      "image": "/images/certificates/4sim-frontend.jpg",
-      "pdf": "/certificates/4sim-frontend.jpg"
+      "image": "/images/certificates/4sim-frontend.jpg"
     },
     {
       "title": "Məktəblilərarası Milli Hakaton — Mentor",
       "issuer": "Azerbaijan Ministry of Science and Education",
       "date": "Dec 2025",
-      "image": "/images/certificates/milli-hakaton.jpg",
-      "pdf": "/certificates/milli-hakaton.jpg"
+      "image": "/images/certificates/milli-hakaton.jpg"
     },
     {
       "title": "PASHA Hackathon 6.0 — Certificate of Participation",
       "issuer": "PASHA Holding",
       "date": "May 2026",
-      "image": "/images/certificates/pasha-hackathon.jpg",
-      "pdf": "/certificates/pasha-hackathon.jpg"
+      "image": "/images/certificates/pasha-hackathon.jpg"
     },
     {
       "title": "Stay Ahead of the AI Curve",
       "issuer": "Google (via Coursera)",
       "date": "Jul 2026",
-      "image": "/images/certificates/coursera-ai-curve.jpg",
-      "pdf": "/certificates/coursera-ai-curve.pdf"
+      "image": "/images/certificates/coursera-ai-curve.jpg"
     },
     {
       "title": "Frontend Developer (React)",
       "issuer": "HackerRank",
       "date": "Jul 2026",
-      "image": "/images/certificates/frontend-developer-react-hackerrank.jpg",
-      "pdf": "/certificates/frontend-developer-react-hackerrank.pdf"
+      "image": "/images/certificates/frontend-developer-react-hackerrank.jpg"
     },
     {
       "title": "JavaScript (Intermediate)",
       "issuer": "HackerRank",
       "date": "Jul 2026",
-      "image": "/images/certificates/javascript-intermediate-hackerrank.jpg",
-      "pdf": "/certificates/javascript-intermediate-hackerrank.pdf"
+      "image": "/images/certificates/javascript-intermediate-hackerrank.jpg"
     }
   ],
   "socials": [

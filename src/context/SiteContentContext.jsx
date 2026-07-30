@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import seed from "../../shared/site-content.seed.json";
-import { SiteContentContext } from "./site-content-context";
+import { SiteContentContext, EMPTY_SITE_CONTENT } from "./site-content-context";
 
 export function SiteContentProvider({ children }) {
-  const [content, setContent] = useState(seed);
+  const [content, setContent] = useState(EMPTY_SITE_CONTENT);
 
   useEffect(() => {
     let cancelled = false;
@@ -15,8 +14,7 @@ export function SiteContentProvider({ children }) {
         if (data && !cancelled) setContent(data);
       })
       .catch(() => {
-        // No backend available (e.g. plain `vite` dev, or offline) —
-        // keep the bundled seed data as a fallback.
+        // API unreachable — content stays empty until it comes back.
       });
 
     return () => {

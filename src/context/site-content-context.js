@@ -1,7 +1,15 @@
 import { createContext, useContext } from "react";
-import seed from "../../shared/site-content.seed.json";
 
-export const SiteContentContext = createContext(seed);
+export const EMPTY_SITE_CONTENT = {
+  skills: [],
+  experiences: [],
+  educations: [],
+  projects: [],
+  certificates: [],
+  socials: [],
+};
+
+export const SiteContentContext = createContext(EMPTY_SITE_CONTENT);
 
 export function useSiteContent() {
   return useContext(SiteContentContext);

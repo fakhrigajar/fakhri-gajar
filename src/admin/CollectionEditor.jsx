@@ -11,9 +11,6 @@ dayjs.extend(customParseFormat);
 const inputClass =
   "w-full rounded-lg border border-surface-border bg-surface-1 px-3 py-2 text-sm text-text-primary outline-none focus:border-primary";
 
-const uploadButtonClass =
-  "flex shrink-0 items-center gap-1 rounded-lg border border-surface-border px-2.5 py-2 text-xs font-medium text-text-secondary hover:border-primary hover:text-primary disabled:opacity-50";
-
 const DATE_FORMAT = "MMM YYYY";
 
 const MotionTag = motion.create(Tag);
@@ -302,44 +299,6 @@ function Field({ field, value, onChange }) {
     );
   }
 
-  if (field.type === "file") {
-    return (
-      <div className="flex flex-col gap-1.5">
-        <div className="flex items-center gap-3">
-          <input
-            className={inputClass}
-            type="text"
-            value={value || ""}
-            placeholder="/certificates/... or https://..."
-            onChange={(e) => onChange(e.target.value)}
-          />
-          {value && (
-            <a
-              href={value}
-              target="_blank"
-              rel="noreferrer"
-              className="shrink-0 text-xs font-medium text-primary hover:underline"
-            >
-              View
-            </a>
-          )}
-          <label className={uploadButtonClass}>
-            <i className="ri-upload-2-line"></i>
-            {uploading ? "..." : "Upload"}
-            <input
-              type="file"
-              accept="application/pdf,image/*"
-              className="hidden"
-              disabled={uploading}
-              onChange={(e) => handleFile(e.target.files?.[0])}
-            />
-          </label>
-        </div>
-        {error && <p className="text-xs text-red-400">{error}</p>}
-      </div>
-    );
-  }
-
   return (
     <input
       className={inputClass}
@@ -408,7 +367,7 @@ function CollectionEditor({ schema, items, onChange }) {
         className="flex items-center justify-center gap-2 rounded-2xl border border-dashed border-surface-border py-4 text-text-secondary hover:border-primary hover:text-primary"
       >
         <i className="ri-add-line"></i>
-        Add {schema.label} item
+        Add New {schema.label}
       </button>
 
       {items.map((item, index) => {

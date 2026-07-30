@@ -6,7 +6,6 @@ const certificateSchema = new Schema(
     issuer: { type: String, default: "" },
     date: { type: String, default: "" },
     image: { type: String, default: "" },
-    pdf: { type: String, default: "" },
   },
   { timestamps: true },
 );

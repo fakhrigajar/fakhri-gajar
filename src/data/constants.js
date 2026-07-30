@@ -1,5 +1,4 @@
 import meImg from "../assets/images/me.png";
-import seed from "../../shared/site-content.seed.json";
 
 export const bio = {
   name: "Fakhri Gajar",
@@ -10,8 +9,6 @@ export const bio = {
     "https://drive.google.com/file/d/1OF5OBRZb6AWol0lO9-q3QW_BKwSN17Jf/view?usp=sharing",
   image: meImg,
 };
-
-export const socials = seed.socials;
 
 export const navigations = [
   {
@@ -49,14 +46,6 @@ export const navigations = [
     value: "#contact",
   },
 ];
-
-export const skills = seed.skills;
-
-export const experiences = seed.experiences;
-
-export const educations = seed.educations;
-
-export const projects = seed.projects;
 
 export const contactDetail = {
   description:
@@ -120,5 +109,3 @@ export const contactDetail = {
     },
   ],
 };
-
-export const certificates = seed.certificates;

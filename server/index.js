@@ -49,11 +49,12 @@ app.use((err, req, res, _next) => {
 });
 
 const PORT = process.env.PORT || 4000;
+const HOST = "0.0.0.0";
 
 connectDB()
   .then(() => {
-    app.listen(PORT, () => {
-      console.log(`API listening on http://localhost:${PORT}`);
+    app.listen(PORT, HOST, () => {
+      console.log(`API listening on http://${HOST}:${PORT}`);
     });
   })
   .catch((err) => {

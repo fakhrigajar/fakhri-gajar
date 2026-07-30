@@ -2,6 +2,8 @@ import "remixicon/fonts/remixicon.css";
 import "./assets/styles/style.css";
 import "./assets/styles/tailwind.css";
 import "react-toastify/dist/ReactToastify.css";
+import { ConfigProvider } from "antd";
+import { antdThemeConfig } from "./lib/antdTheme";
 import Experience from "./components/Experience/Experience";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
@@ -41,31 +43,33 @@ function App() {
   }, []);
 
   return (
-    <SiteContentProvider>
-      {isLoading ? <Loader /> : ""}
-      <ToastContainer
-        position="top-center"
-        autoClose={2000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="dark"
-        transition:Bounce
-      />
-      <Header />
-      <Hero />
-      <Skills />
-      <Projects />
-      <Education />
-      <Journey />
-      <Certificates />
-      <Contact />
-      <Footer />
-    </SiteContentProvider>
+    <ConfigProvider theme={antdThemeConfig}>
+      <SiteContentProvider>
+        {isLoading ? <Loader /> : ""}
+        <ToastContainer
+          position="top-center"
+          autoClose={2000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
+          transition:Bounce
+        />
+        <Header />
+        <Hero />
+        <Skills />
+        <Projects />
+        <Education />
+        <Journey />
+        <Certificates />
+        <Contact />
+        <Footer />
+      </SiteContentProvider>
+    </ConfigProvider>
   );
 }
 
