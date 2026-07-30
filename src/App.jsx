@@ -4,7 +4,6 @@ import "./assets/styles/tailwind.css";
 import "react-toastify/dist/ReactToastify.css";
 import { ConfigProvider } from "antd";
 import { antdThemeConfig } from "./lib/antdTheme";
-import Experience from "./components/Experience/Experience";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
@@ -24,7 +23,6 @@ import { SiteContentProvider } from "./context/SiteContentContext";
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    setIsLoading(true);
     document.body.style.overflow = "hidden";
     const timer = setTimeout(() => {
       setIsLoading(false);
