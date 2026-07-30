@@ -113,3 +113,14 @@ export const collectionOrder = [
   "certificates",
   "socials",
 ];
+
+export const aboutSchema = {
+  label: "About",
+  fields: [
+    { key: "image", label: "Photo", type: "image" },
+    { key: "name", label: "Name", type: "text", required: true },
+    { key: "description", label: "Bio", type: "textarea" },
+    { key: "roles", label: "Roles", type: "tags", addLabel: "Add role" },
+    { key: "resume", label: "Resume URL", type: "text" },
+  ],
+};

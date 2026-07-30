@@ -155,7 +155,7 @@ function useTagInput(value, onChange) {
   };
 }
 
-function Field({ field, value, onChange }) {
+export function Field({ field, value, onChange }) {
   const { uploading, error, handleFile } = useFileUpload(onChange);
   const tagInput = useTagInput(value, onChange);
 
@@ -193,7 +193,7 @@ function Field({ field, value, onChange }) {
               initial="initial"
               animate="animate"
               exit="exit"
-              className="font-poppins"
+              className="font-poppins bg-surface-1"
               style={{
                 display: "inline-block",
                 overflow: "hidden",
@@ -219,8 +219,11 @@ function Field({ field, value, onChange }) {
             onPressEnter={confirmInput}
           />
         ) : (
-          <Tag onClick={showInput} className="cursor-pointer border-dashed">
-            <i className="ri-add-line"></i> Add skill
+          <Tag
+            onClick={showInput}
+            className="cursor-pointer border-dashed bg-surface-1"
+          >
+            <i className="ri-add-line"></i> {field.addLabel || "Add skill"}
           </Tag>
         )}
       </div>

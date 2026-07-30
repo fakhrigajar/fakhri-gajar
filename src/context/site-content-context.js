@@ -7,6 +7,7 @@ export const EMPTY_SITE_CONTENT = {
   projects: [],
   certificates: [],
   socials: [],
+  about: { name: "", description: "", roles: [], resume: "", image: "" },
 };
 
 export const SiteContentContext = createContext(EMPTY_SITE_CONTENT);

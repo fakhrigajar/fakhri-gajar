@@ -1,15 +1,3 @@
-import meImg from "../assets/images/me.png";
-
-export const bio = {
-  name: "Fakhri Gajar",
-  description:
-    "I’m a passionate Frontend Developer focused on crafting clean, responsive, and user-friendly web interfaces. I love turning ideas into interactive digital experiences using modern web technologies.",
-  roles: ["Frontend Developer", "Coder", "Programmer"],
-  resume:
-    "https://drive.google.com/file/d/1OF5OBRZb6AWol0lO9-q3QW_BKwSN17Jf/view?usp=sharing",
-  image: meImg,
-};
-
 export const navigations = [
   {
     label: "About",

@@ -1,17 +1,19 @@
-import { bio } from "../../data/constants";
+import meImg from "../../assets/images/me.png";
+import { useSiteContent } from "../../context/site-content-context";
 
 const codeSkills = ["HTML", "CSS", "JavaScript", "React"];
 
 function HeroImage() {
-  const firstName = bio.name.split(" ")[0];
+  const { about } = useSiteContent();
+  const firstName = (about.name || "").split(" ")[0];
 
   return (
     <div className="flex justify-center desktop:justify-end py- desktop:py-0">
       <div className="relative flex justify-center h-[320px] desktop:h-[460px]">
         <img
           className="relative w-[500px] h-full object-contain object-bottom [mask-image:linear-gradient(to_bottom,black_70%,transparent_90%)]"
-          src={bio.image}
-          alt={bio.name}
+          src={about.image || meImg}
+          alt={about.name}
         />
 
         <span className="absolute hidden desktop:block -left-3 bottom-8 desktop:left-0 desktop:bottom-14 text-white/60">

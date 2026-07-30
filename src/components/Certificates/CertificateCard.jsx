@@ -16,7 +16,7 @@ function CertificateCard({ certificate }) {
           rootClassName="block h-full w-full"
           className="!h-full w-full object-cover duration-500 group-hover:scale-110"
           preview={{
-            mask: (
+            cover: (
               <span className="flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-medium text-white shadow-lg">
                 <i className="ri-zoom-in-line"></i>
                 View Certificate
