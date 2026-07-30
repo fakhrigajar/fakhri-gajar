@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { skills as skillIcons } from "../../data/constants";
+import { useSiteContent } from "../../context/site-content-context";
 
 const MAX_VISIBLE_SKILLS = 4;
 
@@ -7,21 +7,22 @@ const SKILL_ALIASES = {
   "redux/redux toolkit": "redux",
 };
 
-const skillIconMap = skillIcons.reduce((map, skill) => {
-  map[skill.label.toLowerCase()] = skill.image;
-  return map;
-}, {});
-
-const getSkillIcon = (skillName) => {
-  const key = skillName.toLowerCase();
-  return skillIconMap[key] || skillIconMap[SKILL_ALIASES[key]] || null;
-};
-
 function ProjectCard({ projectsList }) {
+  const { skills: skillIcons } = useSiteContent();
   const { name, category, image, skills, links } = projectsList;
   const [liveLink, codeLink] = links;
   const visibleSkills = skills.slice(0, MAX_VISIBLE_SKILLS);
   const hiddenSkills = skills.slice(MAX_VISIBLE_SKILLS);
+
+  const skillIconMap = skillIcons.reduce((map, skill) => {
+    map[skill.label.toLowerCase()] = skill.image;
+    return map;
+  }, {});
+
+  const getSkillIcon = (skillName) => {
+    const key = skillName.toLowerCase();
+    return skillIconMap[key] || skillIconMap[SKILL_ALIASES[key]] || null;
+  };
 
   return (
     <div

@@ -17,6 +17,10 @@ dist-ssr
 .netlify
 deno.lock
 
+# Uploaded files served by the Express API (server/routes/uploads.js)
+server/uploads/*
+!server/uploads/.gitkeep
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

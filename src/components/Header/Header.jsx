@@ -5,18 +5,24 @@ import { navigations } from "../../data/constants";
 function Header() {
   const [activeSection, setActiveSection] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+  const [scrollInt, setScrollInt] = useState(0);
+  const [openGroupIndex, setOpenGroupIndex] = useState(null);
+
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "initial";
   }, [isOpen]);
 
-  const [scrollInt, setScrollInt] = useState(0);
-  window.addEventListener("scroll", () => {
-    setScrollInt(scrollY);
-  });
+  const closeMenu = () => {
+    setIsOpen(false);
+    setOpenGroupIndex(null);
+  };
 
   useEffect(() => {
+    const sections = document.querySelectorAll("section");
+
     const handleScroll = () => {
-      const sections = document.querySelectorAll("section");
+      setScrollInt(window.scrollY);
+
       let currentSection = "";
       const scrollPosition = window.pageYOffset + window.innerHeight / 3;
 
@@ -37,6 +43,25 @@ function Header() {
     };
   }, []);
 
+  useEffect(() => {
+    if (!isOpen) return undefined;
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") closeMenu();
+    };
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) closeMenu();
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [isOpen]);
+
   return (
     <header
       className={`${scrollInt > 120 ? `header-shadow` : ``} flex justify-center items-center py-5 desktop:py-10 fixed top-0 left-0 duration-300 z-10 w-full bg-surface-1`}
@@ -51,50 +76,64 @@ function Header() {
           </a>
         </div>
         <nav
-          className={`${isOpen ? `translate-x-0 opacity-100 visible` : `-translate-x-[10px] opacity-0 invisible`} z-[1] fixed top-0 left-0 duration-300 w-full h-full bg-surface-2 flex justify-center desktop:static desktop:opacity-100 desktop:visible desktop:bg-transparent desktop:w-fit desktop:h-fit desktop:translate-x-0`}
+          className={`${isOpen ? `translate-x-0 opacity-100 visible` : `-translate-x-[10px] opacity-0 invisible`} z-[1] fixed top-0 left-0 duration-300 w-full h-full overflow-y-auto bg-surface-2 py-24 flex justify-center desktop:static desktop:overflow-visible desktop:py-0 desktop:opacity-100 desktop:visible desktop:bg-transparent desktop:w-fit desktop:h-fit desktop:translate-x-0`}
         >
-          <ul className="flex flex-col items-center justify-center gap-[30px] desktop:flex-row desktop:gap-5">
+          <ul className="flex min-h-full flex-col items-center justify-center gap-[30px] desktop:flex-row desktop:gap-5">
             {navigations.map((navigation, index) => {
               if (navigation.children) {
                 const isChildActive = navigation.children.some(
                   (child) => child.value === `#` + activeSection,
                 );
+                const isGroupOpen = openGroupIndex === index;
 
                 return (
                   <li
                     key={index}
                     className="group relative flex flex-col items-center gap-[30px] desktop:gap-0"
                   >
-                    <span
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setOpenGroupIndex(isGroupOpen ? null : index)
+                      }
                       className={`${
                         isChildActive
                           ? `text-primary after:w-full`
                           : `text-text-secondary after:w-0`
-                      } flex cursor-default items-center gap-1 text-4xl desktop:text-lg no-underline font-semibold relative duration-300 group-hover:text-primary group-hover:after:w-full after:absolute after:-bottom-[7px] after:left-2/4 after:-translate-x-2/4 after:bg-primary after:h-1 after:duration-300`}
+                      } flex items-center gap-1 bg-transparent text-4xl desktop:text-lg no-underline font-semibold relative duration-300 group-hover:text-primary group-hover:after:w-full after:absolute after:-bottom-[7px] after:left-2/4 after:-translate-x-2/4 after:bg-primary after:h-1 after:duration-300 desktop:cursor-default`}
                     >
                       {navigation.label}
-                      <i className="ri-arrow-down-s-line hidden desktop:inline text-base"></i>
-                    </span>
+                      <i
+                        className={`ri-arrow-down-s-line text-2xl duration-200 desktop:text-base ${
+                          isGroupOpen ? "rotate-180" : ""
+                        }`}
+                      ></i>
+                    </button>
 
-                    <ul className="flex flex-col items-center gap-[30px] desktop:hidden">
-                      {navigation.children.map((child) => (
-                        <li
-                          key={child.value}
-                          onClick={() => setIsOpen(false)}
-                        >
-                          <a
-                            className={`${
-                              child.value === `#` + activeSection
-                                ? `text-primary`
-                                : `text-text-secondary`
-                            } text-2xl no-underline font-medium duration-300 hover:text-primary`}
-                            href={child.value}
-                          >
-                            {child.label}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
+                    <div
+                      className={`grid w-full transition-all duration-300 ease-in-out desktop:hidden ${
+                        isGroupOpen
+                          ? "grid-rows-[1fr] opacity-100"
+                          : "grid-rows-[0fr] opacity-0"
+                      }`}
+                    >
+                      <ul className="flex flex-col items-center gap-[30px] overflow-hidden pt-[30px]">
+                        {navigation.children.map((child) => (
+                          <li key={child.value} onClick={closeMenu}>
+                            <a
+                              className={`${
+                                child.value === `#` + activeSection
+                                  ? `text-primary`
+                                  : `text-text-secondary`
+                              } text-2xl no-underline font-medium duration-300 hover:text-primary`}
+                              href={child.value}
+                            >
+                              {child.label}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
 
                     <div className="invisible absolute left-1/2 top-full z-20 hidden w-52 -translate-x-1/2 pt-3 opacity-0 duration-200 desktop:block group-hover:visible group-hover:opacity-100">
                       <ul className="flex w-full flex-col gap-1 rounded-xl border border-surface-border bg-surface-card p-2 shadow-2xl">
@@ -119,12 +158,7 @@ function Header() {
               }
 
               return (
-                <li
-                  onClick={() => {
-                    setIsOpen(false);
-                  }}
-                  key={index}
-                >
+                <li onClick={closeMenu} key={index}>
                   <a
                     className={`${
                       navigation.value === `#` + activeSection
@@ -140,7 +174,14 @@ function Header() {
             })}
           </ul>
         </nav>
-        <Hamburger toggled={isOpen} size={25} toggle={setIsOpen} />
+        <Hamburger
+          toggled={isOpen}
+          size={25}
+          toggle={(nextOpen) => {
+            setIsOpen(nextOpen);
+            if (!nextOpen) setOpenGroupIndex(null);
+          }}
+        />
       </div>
     </header>
   );

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import { VerticalTimelineElement } from "react-vertical-timeline-component";
+import { formatDateRange } from "../../lib/dateRange";
 
 function ExperienceCard({
   id,
@@ -34,7 +35,7 @@ function ExperienceCard({
         borderBottom: "4px solid #854ce6",
       }}
       contentArrowStyle={{ borderRight: "7px solid  #854ce6" }}
-      date={experienceList.date}
+      date={formatDateRange(experienceList.date)}
       iconStyle={{ background: "#854ce6", color: "#fff" }}
       icon={
         <img
@@ -107,7 +108,14 @@ ExperienceCard.propTypes = {
     image: PropTypes.string,
     company: PropTypes.string,
     position: PropTypes.string,
-    date: PropTypes.string,
+    date: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.shape({
+        start: PropTypes.string,
+        end: PropTypes.string,
+        ongoing: PropTypes.bool,
+      }),
+    ]),
     description: PropTypes.string,
     skills: PropTypes.arrayOf(PropTypes.string),
   }).isRequired,

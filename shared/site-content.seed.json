@@ -25,14 +25,14 @@
       "image": "/images/experience/hsc.png",
       "position": "ICT Instructor",
       "company": "Hadaf Stars Campus",
-      "date": "September 2025 - Present",
+      "date": { "start": "September 2025", "end": "", "ongoing": true },
       "description": "As an ICT teacher for students in grades 3 to 7, I design and deliver engaging lessons that introduce young learners to the fundamentals of computer science, digital literacy, and safe technology use. My teaching focuses on helping students understand algorithms, logical thinking, and problem-solving through interactive platforms. I create a supportive and motivating classroom environment where students explore the basics of programming, data handling, and information processing. By combining theory with hands-on activities, I aim to develop their curiosity about technology and prepare them for more advanced ICT concepts in the future."
     },
     {
       "image": "/images/experience/alqoritmika.png",
       "position": "Mentor — Məktəblilərarası Milli Hakaton",
       "company": "Algoritmika",
-      "date": "August 2025 - Present",
+      "date": { "start": "August 2025", "end": "", "ongoing": true },
       "description": "As a Mentor at the Məktəblilərarası Milli Hakaton (National Hackathon for School Students), I guided semifinalist teams in developing their technology projects by providing technical support and mentorship throughout the process. My role involved assisting students in building web-based and Python projects using tools such as HTML, CSS, Flask, Pandas, PyQt, and PyGame. I focused on fostering their creativity, teamwork, and problem-solving skills while helping them apply programming concepts in real-world scenarios. Through this experience, I strengthened my communication and leadership abilities, gained valuable mentoring experience, and contributed to inspiring the next generation of young technologists.",
       "skills": ["HTML", "CSS", "Flask", "Pandas", "PyQT", "PyGame"]
     },
@@ -40,7 +40,7 @@
       "image": "/images/experience/itbrains.jpg",
       "position": "Frontend Developer (Mentor)",
       "company": "IT Brains",
-      "date": "September 2024 - November 2024",
+      "date": { "start": "September 2024", "end": "November 2024", "ongoing": false },
       "description": "As a Frontend Developer Mentor, I enjoy sharing what I’ve learned about building clean, responsive, and user-friendly interfaces. I guide beginners through real project experiences, explain concepts in a simple way, and help them avoid the mistakes I made when starting out. It’s about growing together and turning challenges into confidence",
       "skills": [
         "Front-End Development",
@@ -55,7 +55,7 @@
       "image": "/images/experience/company.jpg",
       "position": "Frontend Developer (Startup)",
       "company": "NEXT US",
-      "date": "May 2024 - August 2024",
+      "date": { "start": "May 2024", "end": "August 2024", "ongoing": false },
       "description": "I am currently working as a Frontend Developer at a startup called NEXT US. Here we work as a team and try to come up with interesting projects.",
       "skills": [
         "Front-End Development",
@@ -74,7 +74,7 @@
       "image": "/images/experience/jet-academy.jpg",
       "position": "Frontend Developer (Intern)",
       "company": "JET Academy",
-      "date": "May 2024 - June 2024",
+      "date": { "start": "May 2024", "end": "June 2024", "ongoing": false },
       "description": "I am currently participating in JET Academy's Frontend Developer internship program. Here, I am increasing my knowledge and experience by working on interesting projects.",
       "skills": [
         "Front-End Development",
@@ -92,12 +92,12 @@
     {
       "institution": "Azerbaijan Technical University",
       "degree": "Master / Multichannel Telecommunications Engineering",
-      "date": "2025 - present"
+      "date": { "start": "2025", "end": "", "ongoing": true }
     },
     {
       "institution": "Azerbaijan State Oil and Industry University",
       "degree": "Bachelor / Radiotechnic and Telecommunications Engineering",
-      "date": "2021 - 2025"
+      "date": { "start": "2021", "end": "2025", "ongoing": false }
     }
   ],
   "projects": [
@@ -115,7 +115,7 @@
         "Axios",
         "Clerk"
       ],
-      "date": "December 2024",
+      "date": { "start": "December 2024", "end": "", "ongoing": false },
       "category": "Web App",
       "links": [
         "https://fitbmovies.vercel.app/",
@@ -133,7 +133,7 @@
         "Clerk",
         "Material UI"
       ],
-      "date": "August 2024 - August 2024",
+      "date": { "start": "August 2024", "end": "August 2024", "ongoing": false },
       "category": "Web App",
       "links": [
         "https://fitb-notepad-plus.netlify.app/",
@@ -144,7 +144,7 @@
       "name": "FITB Game",
       "image": "/images/projects/fitb-game.png",
       "skills": ["HTML", "CSS", "Javascript", "SASS/SCSS"],
-      "date": "Aug 2023 - Sep 2023",
+      "date": { "start": "Aug 2023", "end": "Sep 2023", "ongoing": false },
       "category": "E-Commerce",
       "links": [
         "https://fitbgame.netlify.app/",
@@ -164,7 +164,7 @@
         "Firebase",
         "Axios"
       ],
-      "date": "Feb 2024 - Mar 2024",
+      "date": { "start": "Feb 2024", "end": "Mar 2024", "ongoing": false },
       "category": "E-Commerce",
       "links": [
         "https://jerseystoreaz.vercel.app/",
@@ -175,7 +175,7 @@
       "name": "FITB Finder",
       "image": "/images/projects/fitb-finder.png",
       "skills": ["HTML", "CSS", "Javascript", "SASS/SCSS", "React JS", "Axios"],
-      "date": "Mar 2024 - Mar 2024",
+      "date": { "start": "Mar 2024", "end": "Mar 2024", "ongoing": false },
       "category": "Web App",
       "links": [
         "https://fitbfinder.netlify.app/",

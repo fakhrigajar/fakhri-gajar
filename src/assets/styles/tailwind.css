@@ -18,3 +18,7 @@
     @apply font-poppins;
   }
 }
+
+.ant-tabs-nav::before {
+  border-color: theme("colors.surface.border") !important;
+}

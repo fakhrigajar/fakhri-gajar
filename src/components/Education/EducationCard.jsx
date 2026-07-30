@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { formatDateRange } from "../../lib/dateRange";
 
 function EducationCard({ educationList }) {
   const { institution, degree, date } = educationList;
@@ -12,7 +13,9 @@ function EducationCard({ educationList }) {
         <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primaryOverlay text-lg text-primary">
           <i className="ri-graduation-cap-fill"></i>
         </span>
-        <span className="mt-1 shrink-0 text-xs text-text-muted">{date}</span>
+        <span className="mt-1 shrink-0 text-xs text-text-muted">
+          {formatDateRange(date)}
+        </span>
       </div>
 
       <div className="flex flex-col gap-1">
@@ -29,7 +32,14 @@ EducationCard.propTypes = {
   educationList: PropTypes.shape({
     institution: PropTypes.string.isRequired,
     degree: PropTypes.string,
-    date: PropTypes.string,
+    date: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.shape({
+        start: PropTypes.string,
+        end: PropTypes.string,
+        ongoing: PropTypes.bool,
+      }),
+    ]),
     description: PropTypes.string,
   }).isRequired,
 };

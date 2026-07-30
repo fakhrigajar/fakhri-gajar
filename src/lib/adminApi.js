@@ -13,7 +13,7 @@ export function clearToken() {
 }
 
 const API_UNAVAILABLE_MESSAGE =
-  "Admin API not reachable. Run `netlify dev` (not plain `vite`) locally, or check that this is deployed on Netlify.";
+  "Admin API not reachable. Run `npm run dev:full` (or start `npm run server` alongside `npm run dev`) locally.";
 
 async function parseJson(res) {
   try {
@@ -43,6 +43,24 @@ export async function fetchContent() {
     throw new Error("Failed to load site content.");
   }
   return parseJson(res);
+}
+
+export async function uploadImage(file) {
+  const token = getToken();
+  const body = new FormData();
+  body.append("file", file);
+
+  const res = await fetch("/api/uploads", {
+    method: "POST",
+    headers: { Authorization: `Bearer ${token}` },
+    body,
+  });
+  const data = await parseJson(res);
+  if (!res.ok) {
+    if (res.status === 401) clearToken();
+    throw new Error(data.error || "Failed to upload file.");
+  }
+  return data.url;
 }
 
 export async function saveContent(content) {

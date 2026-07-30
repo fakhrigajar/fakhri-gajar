@@ -5,7 +5,7 @@ export const collectionSchemas = {
     emptyItem: { label: "", image: "" },
     fields: [
       { key: "label", label: "Label", type: "text", required: true },
-      { key: "image", label: "Image URL", type: "image" },
+      { key: "image", label: "Image", type: "image" },
     ],
   },
   experiences: {
@@ -14,7 +14,7 @@ export const collectionSchemas = {
     emptyItem: {
       position: "",
       company: "",
-      date: "",
+      date: { start: "", end: "", ongoing: false },
       image: "",
       description: "",
       skills: [],
@@ -22,16 +22,25 @@ export const collectionSchemas = {
     fields: [
       { key: "position", label: "Position", type: "text", required: true },
       { key: "company", label: "Company", type: "text", required: true },
-      { key: "date", label: "Date", type: "text" },
-      { key: "image", label: "Logo URL", type: "image" },
+      {
+        key: "date",
+        label: "Date",
+        type: "daterange",
+        ongoingLabel: "I currently work here",
+      },
+      { key: "image", label: "Logo", type: "image" },
       { key: "description", label: "Description", type: "textarea" },
-      { key: "skills", label: "Skills (comma separated)", type: "tags" },
+      { key: "skills", label: "Skills", type: "tags" },
     ],
   },
   educations: {
     label: "Education",
     itemLabel: (item) => item.institution || "New school",
-    emptyItem: { institution: "", degree: "", date: "" },
+    emptyItem: {
+      institution: "",
+      degree: "",
+      date: { start: "", end: "", ongoing: false },
+    },
     fields: [
       {
         key: "institution",
@@ -40,7 +49,12 @@ export const collectionSchemas = {
         required: true,
       },
       { key: "degree", label: "Degree", type: "text" },
-      { key: "date", label: "Date", type: "text" },
+      {
+        key: "date",
+        label: "Date",
+        type: "daterange",
+        ongoingLabel: "I'm currently studying here",
+      },
     ],
   },
   projects: {
@@ -50,16 +64,21 @@ export const collectionSchemas = {
       name: "",
       image: "",
       category: "",
-      date: "",
+      date: { start: "", end: "", ongoing: false },
       skills: [],
       links: ["", ""],
     },
     fields: [
       { key: "name", label: "Name", type: "text", required: true },
-      { key: "image", label: "Image URL", type: "image" },
+      { key: "image", label: "Image", type: "image" },
       { key: "category", label: "Category", type: "text" },
-      { key: "date", label: "Date", type: "text" },
-      { key: "skills", label: "Skills (comma separated)", type: "tags" },
+      {
+        key: "date",
+        label: "Date",
+        type: "daterange",
+        ongoingLabel: "This project is ongoing",
+      },
+      { key: "skills", label: "Skills", type: "tags" },
       { key: "links", label: "Links", type: "links" },
     ],
   },
@@ -70,9 +89,9 @@ export const collectionSchemas = {
     fields: [
       { key: "title", label: "Title", type: "text", required: true },
       { key: "issuer", label: "Issuer", type: "text" },
-      { key: "date", label: "Date", type: "text" },
-      { key: "image", label: "Image URL", type: "image" },
-      { key: "pdf", label: "PDF URL", type: "url" },
+      { key: "date", label: "Date", type: "date" },
+      { key: "image", label: "Image", type: "image" },
+      { key: "pdf", label: "PDF", type: "file" },
     ],
   },
   socials: {
