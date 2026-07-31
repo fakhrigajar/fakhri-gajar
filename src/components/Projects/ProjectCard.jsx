@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { useSiteContent } from "../../context/site-content-context";
+import { skills as skillIcons } from "../../data/constants";
 
 const MAX_VISIBLE_SKILLS = 4;
 
@@ -8,7 +8,6 @@ const SKILL_ALIASES = {
 };
 
 function ProjectCard({ projectsList }) {
-  const { skills: skillIcons } = useSiteContent();
   const { name, category, image, skills, links } = projectsList;
   const [liveLink, codeLink] = links;
   const visibleSkills = skills.slice(0, MAX_VISIBLE_SKILLS);

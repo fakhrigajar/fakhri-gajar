@@ -1,9 +1,7 @@
-import { useSiteContent } from "../../context/site-content-context";
+import { skills } from "../../data/constants";
 import SkillCard from "./SkillCard";
 
 function Skills() {
-  const { skills } = useSiteContent();
-
   return (
     <section
       id="skills"

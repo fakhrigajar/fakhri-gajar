@@ -1,13 +1,11 @@
 import HeroImage from "./HeroImage";
 import { Typewriter } from "react-simple-typewriter";
 import { DefaultBtn } from "../components.style";
-import { useSiteContent } from "../../context/site-content-context";
+import { about } from "../../data/constants";
 import GridPattern from "../Custom/GridPattern";
 import { cn } from "../../lib/utils";
 
 function Hero() {
-  const { about } = useSiteContent();
-  console.log(about);
 
   return (
     <section

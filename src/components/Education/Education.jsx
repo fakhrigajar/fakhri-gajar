@@ -1,9 +1,7 @@
-import { useSiteContent } from "../../context/site-content-context";
+import { educations } from "../../data/constants";
 import EducationCard from "./EducationCard";
 
 function Education() {
-  const { educations } = useSiteContent();
-
   return (
     <section
       id="education"

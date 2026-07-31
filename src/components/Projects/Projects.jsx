@@ -1,9 +1,7 @@
-import { useSiteContent } from "../../context/site-content-context";
+import { projects } from "../../data/constants";
 import ProjectCard from "./ProjectCard";
 
 function Projects() {
-  const { projects } = useSiteContent();
-
   return (
     <section
       id="projects"

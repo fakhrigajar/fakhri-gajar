@@ -1,4 +1,4 @@
-import { useSiteContent } from "../../context/site-content-context";
+import { certificates } from "../../data/constants";
 import CertificateCard from "./CertificateCard";
 
 const MONTHS = [
@@ -39,7 +39,6 @@ function byDateDesc(a, b) {
 }
 
 function Certificates() {
-  const { certificates } = useSiteContent();
   const sortedCertificates = [...certificates].sort(byDateDesc);
 
   return (

@@ -1,9 +1,8 @@
-import { useSiteContent } from "../../context/site-content-context";
+import { about } from "../../data/constants";
 
 const codeSkills = ["HTML", "CSS", "JavaScript", "React"];
 
 function HeroImage() {
-  const { about } = useSiteContent();
   const firstName = (about.name || "").split(" ")[0];
 
   return (

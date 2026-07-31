@@ -3,7 +3,6 @@ import "./assets/styles/style.css";
 import "./assets/styles/tailwind.css";
 import "react-toastify/dist/ReactToastify.css";
 import { ConfigProvider } from "antd";
-import { antdThemeConfig } from "./lib/antdTheme";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
@@ -17,7 +16,6 @@ import { ToastContainer } from "react-toastify";
 import Education from "./components/Education/Education";
 import Journey from "./components/Journey/Journey";
 import Certificates from "./components/Certificates/Certificates";
-import { SiteContentProvider } from "./context/SiteContentContext";
 
 function App() {
   useEffect(() => {
@@ -27,7 +25,7 @@ function App() {
   }, []);
 
   return (
-    <ConfigProvider theme={antdThemeConfig}>
+    <ConfigProvider>
       <ToastContainer
         position="top-center"
         autoClose={2000}
@@ -41,17 +39,15 @@ function App() {
         theme="dark"
         transition:Bounce
       />
-      <SiteContentProvider>
-        <Header />
-        <Hero />
-        <Skills />
-        <Projects />
-        <Education />
-        <Journey />
-        <Certificates />
-        <Contact />
-        <Footer />
-      </SiteContentProvider>
+      <Header />
+      <Hero />
+      <Skills />
+      <Projects />
+      <Education />
+      <Journey />
+      <Certificates />
+      <Contact />
+      <Footer />
     </ConfigProvider>
   );
 }
