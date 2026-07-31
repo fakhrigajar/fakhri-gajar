@@ -1,4 +1,3 @@
-import meImg from "../../assets/images/me.png";
 import { useSiteContent } from "../../context/site-content-context";
 
 const codeSkills = ["HTML", "CSS", "JavaScript", "React"];
@@ -12,7 +11,7 @@ function HeroImage() {
       <div className="relative flex justify-center h-[320px] desktop:h-[460px]">
         <img
           className="relative w-[500px] h-full object-contain object-bottom [mask-image:linear-gradient(to_bottom,black_70%,transparent_90%)]"
-          src={about.image || meImg}
+          src={about.image}
           alt={about.name}
         />
 

@@ -9,10 +9,9 @@ import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
 import Projects from "./components/Projects/Projects";
 import Skills from "./components/Skills/Skills";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import Loader from "./components/Loader/Loader";
 import Contact from "./components/Contact/Contact";
 import { ToastContainer } from "react-toastify";
 import Education from "./components/Education/Education";
@@ -21,19 +20,6 @@ import Certificates from "./components/Certificates/Certificates";
 import { SiteContentProvider } from "./context/SiteContentContext";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
-  useEffect(() => {
-    document.body.style.overflow = "hidden";
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-      document.body.style.overflow = "initial";
-    }, 2000);
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, []);
-
   useEffect(() => {
     Aos.init({
       duration: 200,
@@ -42,21 +28,20 @@ function App() {
 
   return (
     <ConfigProvider theme={antdThemeConfig}>
+      <ToastContainer
+        position="top-center"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        transition:Bounce
+      />
       <SiteContentProvider>
-        {isLoading ? <Loader /> : ""}
-        <ToastContainer
-          position="top-center"
-          autoClose={2000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="dark"
-          transition:Bounce
-        />
         <Header />
         <Hero />
         <Skills />
