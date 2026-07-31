@@ -1,15 +1,13 @@
-import { randomUUID } from "node:crypto";
-import { existsSync, mkdirSync } from "node:fs";
-import { dirname, extname, join } from "node:path";
-import { fileURLToPath } from "node:url";
+import { v2 as cloudinary } from "cloudinary";
 import { Router } from "express";
 import multer from "multer";
 import { requireAuth } from "../middleware/auth.js";
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-export const UPLOADS_DIR = join(__dirname, "../uploads");
-
-if (!existsSync(UPLOADS_DIR)) mkdirSync(UPLOADS_DIR, { recursive: true });
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
 
 const ALLOWED_TYPES = new Set([
   "image/png",
@@ -20,15 +18,8 @@ const ALLOWED_TYPES = new Set([
   "application/pdf",
 ]);
 
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => cb(null, UPLOADS_DIR),
-  filename: (req, file, cb) => {
-    cb(null, `${randomUUID()}${extname(file.originalname)}`);
-  },
-});
-
 const upload = multer({
-  storage,
+  storage: multer.memoryStorage(),
   limits: { fileSize: 5 * 1024 * 1024 },
   fileFilter: (req, file, cb) => {
     if (!ALLOWED_TYPES.has(file.mimetype)) {
@@ -38,10 +29,20 @@ const upload = multer({
   },
 });
 
+function uploadToCloudinary(buffer) {
+  return new Promise((resolve, reject) => {
+    const stream = cloudinary.uploader.upload_stream(
+      { folder: "portfolio", resource_type: "auto" },
+      (err, result) => (err ? reject(err) : resolve(result)),
+    );
+    stream.end(buffer);
+  });
+}
+
 const router = Router();
 
 router.post("/", requireAuth, (req, res) => {
-  upload.single("file")(req, res, (err) => {
+  upload.single("file")(req, res, async (err) => {
     if (err) {
       return res.status(400).json({ error: err.message });
     }
@@ -49,8 +50,12 @@ router.post("/", requireAuth, (req, res) => {
       return res.status(400).json({ error: "No file uploaded." });
     }
 
-    const url = `${req.protocol}://${req.get("host")}/uploads/${req.file.filename}`;
-    res.status(201).json({ url });
+    try {
+      const result = await uploadToCloudinary(req.file.buffer);
+      res.status(201).json({ url: result.secure_url });
+    } catch {
+      res.status(502).json({ error: "Failed to upload to storage." });
+    }
   });
 });
 
