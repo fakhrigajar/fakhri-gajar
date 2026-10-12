@@ -31,21 +31,25 @@ import fitbNotepadImg from "../assets/images/projects/fitb-notepad.png";
 import fitbGameImg from "../assets/images/projects/fitb-game.png";
 import jerseyStoreImg from "../assets/images/projects/jersey-store.png";
 import fitbFinderImg from "../assets/images/projects/fitb-finder.png";
+import codelingoImg from "../assets/images/projects/codelingo.png";
+import modshopImg from "../assets/images/projects/modshop.png";
 
 import cssFreecodecampImg from "../assets/images/certificates/css-freecodecamp.jpg";
 import cssHackerrankImg from "../assets/images/certificates/css-hackerrank.jpg";
 import codeacademyImg from "../assets/images/certificates/codeacademy.jpg";
 import reactSimplilearnImg from "../assets/images/certificates/react-simplilearn.jpg";
-import jsCiscoImg from "../assets/images/certificates/js-cisco.jpg";
 import jsHackerrankImg from "../assets/images/certificates/js-hackerrank.jpg";
 import jedAcademyImg from "../assets/images/certificates/jed-academy.jpg";
 import teflImg from "../assets/images/certificates/tefl.jpg";
 import fsimFrontendImg from "../assets/images/certificates/4sim-frontend.jpg";
 import milliHakatonImg from "../assets/images/certificates/milli-hakaton.jpg";
 import pashaHackathonImg from "../assets/images/certificates/pasha-hackathon.jpg";
-import courseraAiCurveImg from "../assets/images/certificates/coursera-ai-curve.jpg";
 import frontendReactHackerrankImg from "../assets/images/certificates/frontend-developer-react-hackerrank.jpg";
 import javascriptIntermediateHackerrankImg from "../assets/images/certificates/javascript-intermediate-hackerrank.jpg";
+import googleAiEssentialsImg from "../assets/images/certificates/google-ai-essentials.png";
+import safaviStemImg from "../assets/images/certificates/stem.png";
+import generativeAiImg from "../assets/images/certificates/generative-ai.png";
+import codeForFutureImg from "../assets/images/certificates/code-for-future.png";
 
 export const navigations = [
   {
@@ -269,10 +273,23 @@ export const educations = [
 
 export const projects = [
   {
+    name: "Modshop",
+    image: modshopImg,
+    category: "Warehouse App",
+    skills: ["HTML", "CSS", "Javascript", "React JS", "Tailwind CSS"],
+    links: ["https://modshopaz.netlify.app/"],
+  },
+  {
+    name: "CodeLingo",
+    image: codelingoImg,
+    category: "E-Learning",
+    skills: ["HTML", "CSS", "Javascript", "React JS", "Tailwind CSS"],
+    links: ["https://codelingo-app.netlify.app/"],
+  },
+  {
     name: "FITB Movies",
     image: fitbMoviesImg,
     category: "Web App",
-    date: { start: "December 2024", end: "", ongoing: false },
     skills: [
       "HTML",
       "CSS",
@@ -293,8 +310,14 @@ export const projects = [
     name: "FITB NotePad +",
     image: fitbNotepadImg,
     category: "Web App",
-    date: { start: "August 2024", end: "August 2024", ongoing: false },
-    skills: ["HTML", "CSS", "Javascript", "Tailwind CSS", "Clerk", "Material UI"],
+    skills: [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Tailwind CSS",
+      "Clerk",
+      "Material UI",
+    ],
     links: [
       "https://fitb-notepad-plus.netlify.app/",
       "https://github.com/itzjustfitb/fitb-notepad-plus",
@@ -304,7 +327,6 @@ export const projects = [
     name: "FITB Game",
     image: fitbGameImg,
     category: "E-Commerce",
-    date: { start: "Aug 2023", end: "Sep 2023", ongoing: false },
     skills: ["HTML", "CSS", "Javascript", "SASS/SCSS"],
     links: [
       "https://fitbgame.netlify.app/",
@@ -315,7 +337,6 @@ export const projects = [
     name: "Jersey Store",
     image: jerseyStoreImg,
     category: "E-Commerce",
-    date: { start: "Feb 2024", end: "Mar 2024", ongoing: false },
     skills: [
       "HTML",
       "CSS",
@@ -335,7 +356,6 @@ export const projects = [
     name: "FITB Finder",
     image: fitbFinderImg,
     category: "Web App",
-    date: { start: "Mar 2024", end: "Mar 2024", ongoing: false },
     skills: ["HTML", "CSS", "Javascript", "SASS/SCSS", "React JS", "Axios"],
     links: [
       "https://fitbfinder.netlify.app/",
@@ -368,12 +388,6 @@ export const certificates = [
     issuer: "Simplilearn SkillUp",
     date: "Dec 2023",
     image: reactSimplilearnImg,
-  },
-  {
-    title: "JavaScript Essentials 1",
-    issuer: "Cisco Networking Academy",
-    date: "",
-    image: jsCiscoImg,
   },
   {
     title: "JavaScript (Basic)",
@@ -412,12 +426,6 @@ export const certificates = [
     image: pashaHackathonImg,
   },
   {
-    title: "Stay Ahead of the AI Curve",
-    issuer: "Google (via Coursera)",
-    date: "Jul 2026",
-    image: courseraAiCurveImg,
-  },
-  {
     title: "Frontend Developer (React)",
     issuer: "HackerRank",
     date: "Jul 2026",
@@ -428,6 +436,30 @@ export const certificates = [
     issuer: "HackerRank",
     date: "Jul 2026",
     image: javascriptIntermediateHackerrankImg,
+  },
+  {
+    title: "Google AI Essentials",
+    issuer: "Coursera",
+    date: "Jul 2026",
+    image: googleAiEssentialsImg,
+  },
+  {
+    title: "Rəqəmsal Texnologiyanın Gücü: STEM-də texnoloji trendlər",
+    issuer: "Coursera",
+    date: "Sep 2026",
+    image: safaviStemImg,
+  },
+  {
+    title: "Generative AI: Introduction to Large Language Models",
+    issuer: "LinkedIn",
+    date: "Aug 2026",
+    image: generativeAiImg,
+  },
+  {
+    title: "Frontend Developer",
+    issuer: "CodeForFuture",
+    date: "Jan 2025",
+    image: codeForFutureImg,
   },
 ];
 

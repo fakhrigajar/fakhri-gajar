@@ -12,6 +12,7 @@ import { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import Contact from "./components/Contact/Contact";
+import WorkWithMe from "./components/Contact/WorkWithMe";
 import { ToastContainer } from "react-toastify";
 import Education from "./components/Education/Education";
 import Journey from "./components/Journey/Journey";
@@ -48,6 +49,7 @@ function App() {
       <Certificates />
       <Contact />
       <Footer />
+      <WorkWithMe />
     </ConfigProvider>
   );
 }

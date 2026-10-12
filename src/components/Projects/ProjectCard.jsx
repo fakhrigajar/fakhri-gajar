@@ -9,7 +9,7 @@ const SKILL_ALIASES = {
 
 function ProjectCard({ projectsList }) {
   const { name, category, image, skills, links } = projectsList;
-  const [liveLink, codeLink] = links;
+  const [liveLink] = links;
   const visibleSkills = skills.slice(0, MAX_VISIBLE_SKILLS);
   const hiddenSkills = skills.slice(MAX_VISIBLE_SKILLS);
 
@@ -96,16 +96,6 @@ function ProjectCard({ projectsList }) {
             </li>
           )}
         </ul>
-
-        <a
-          href={codeLink}
-          target="_blank"
-          rel="noreferrer"
-          className="mt-auto flex border-b-2 border-solid hover:border-primary border-text-secondary w-fit items-center gap-1.5 self-end text-sm font-medium text-text-secondary duration-300 hover:text-primary"
-        >
-          <i className="ri-github-fill"></i>
-          View Code
-        </a>
       </div>
     </div>
   );
