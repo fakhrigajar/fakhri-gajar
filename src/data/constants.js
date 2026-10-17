@@ -33,6 +33,7 @@ import jerseyStoreImg from "../assets/images/projects/jersey-store.png";
 import fitbFinderImg from "../assets/images/projects/fitb-finder.png";
 import codelingoImg from "../assets/images/projects/codelingo.png";
 import modshopImg from "../assets/images/projects/modshop.png";
+import dolphinBookImg from "../assets/images/projects/dolphin-book.png";
 
 import cssFreecodecampImg from "../assets/images/certificates/css-freecodecamp.jpg";
 import cssHackerrankImg from "../assets/images/certificates/css-hackerrank.jpg";
@@ -272,6 +273,13 @@ export const educations = [
 ];
 
 export const projects = [
+  {
+    name: "Dolphin Book",
+    image: dolphinBookImg,
+    category: "E-Commerce APP",
+    skills: ["HTML", "CSS", "Javascript", "React JS", "Tailwind CSS"],
+    links: ["https://dolphin-az.netlify.app/"],
+  },
   {
     name: "Modshop",
     image: modshopImg,
