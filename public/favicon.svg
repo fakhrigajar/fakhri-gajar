@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Fakhri Gajar</title>
+  <rect width="64" height="64" rx="14" fill="#854ce6" />
+  <g fill="#fff">
+    <path d="M10 17h17v6H16v7h10v6H16v11h-6Z" />
+    <path d="m55 22-4 4c-2-2-4-3-7-3-5 0-7 4-7 9s2 9 7 9c2 0 4-1 5-2v-4h-6v-6h12v13c-3 4-7 6-11 6-8 0-13-6-13-16s5-16 13-16c4 0 8 2 11 6Z" />
+  </g>
+</svg>
