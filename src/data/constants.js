@@ -34,6 +34,7 @@ import fitbFinderImg from "../assets/images/projects/fitb-finder.png";
 import codelingoImg from "../assets/images/projects/codelingo.png";
 import modshopImg from "../assets/images/projects/modshop.png";
 import dolphinBookImg from "../assets/images/projects/dolphin-book.png";
+import fitbAlgoImg from "../assets/images/projects/fitb-algo.png";
 
 import cssFreecodecampImg from "../assets/images/certificates/css-freecodecamp.jpg";
 import cssHackerrankImg from "../assets/images/certificates/css-hackerrank.jpg";
@@ -273,6 +274,13 @@ export const educations = [
 ];
 
 export const projects = [
+  {
+    name: "FITB Algo",
+    image: fitbAlgoImg,
+    category: "Education",
+    skills: ["HTML", "CSS", "Javascript", "React JS", "Tailwind CSS"],
+    links: ["https://fitbalgo-quiz.vercel.app/"],
+  },
   {
     name: "Dolphin Book",
     image: dolphinBookImg,
