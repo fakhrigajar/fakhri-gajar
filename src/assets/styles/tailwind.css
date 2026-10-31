@@ -3,22 +3,164 @@
 @tailwind utilities;
 
 @layer base {
+  /* Light theme. Values are RGB channels so Tailwind can add alpha. */
+  :root {
+    /* Brand colors (#FCCF0A, #FFA500), shared by both themes for fills and glows. */
+    --color-gold: 252 207 10;
+    --color-tangerine: 255 165 0;
+
+    --color-surface-1: 246 243 235;
+    --color-surface-2: 252 251 247;
+    --color-surface-card: 255 255 255;
+    --color-surface-elevated: 255 255 255;
+    --color-surface-border: 234 228 214;
+    --color-text-primary: 28 25 23;
+    --color-text-secondary: 87 83 78;
+    --color-text-muted: 113 106 100;
+    --color-text-subtle: 168 162 158;
+    /* Gold is too light for text on a light background, so text uses deeper ambers. */
+    --color-primary: 180 83 9;
+    --color-primary-overlay: 254 243 199;
+    --color-accent: 234 88 12;
+    --color-tertiary: 249 115 22;
+    --color-shadow: 120 72 10;
+    --aurora-opacity: 0.5;
+    --noise-opacity: 0.03;
+  }
+
+  /* Dark theme. */
+  .dark {
+    --color-surface-1: 16 15 13;
+    --color-surface-2: 10 10 9;
+    --color-surface-card: 21 20 17;
+    --color-surface-elevated: 30 28 24;
+    --color-surface-border: 46 43 37;
+    --color-text-primary: 247 245 240;
+    --color-text-secondary: 176 171 160;
+    --color-text-muted: 138 132 120;
+    --color-text-subtle: 92 88 80;
+    --color-primary: 252 207 10;
+    --color-primary-overlay: 43 35 6;
+    --color-accent: 255 165 0;
+    --color-tertiary: 255 107 44;
+    --color-shadow: 0 0 0;
+    --aurora-opacity: 0.3;
+    --noise-opacity: 0.05;
+  }
+
   html {
     scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
   }
 
   body {
-    @apply bg-surface-2;
+    @apply bg-surface-2 font-sans text-text-primary antialiased;
   }
 
-  body,
-  input,
-  button,
-  textarea {
-    @apply font-poppins;
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display tracking-tight;
+  }
+
+  ::selection {
+    background-color: rgb(var(--color-primary) / 0.25);
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-surface-2;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/[0.08] px-3.5 py-1.5 font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-primary;
+  }
+
+  .eyebrow::before {
+    content: "";
+    @apply h-1.5 w-1.5 rounded-full bg-primary;
+    box-shadow: 0 0 10px rgb(var(--color-primary));
+  }
+
+  .text-gradient {
+    background-image: linear-gradient(
+      110deg,
+      rgb(var(--color-primary)) 0%,
+      rgb(var(--color-accent)) 45%,
+      rgb(var(--color-primary)) 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .btn {
+    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full px-6 py-3.5 text-sm font-semibold transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-70;
+  }
+
+  .btn-primary {
+    @apply bg-brand text-onBrand shadow-lg shadow-tangerine/30 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-tangerine/40;
+  }
+
+  /* Light sweep across the primary button on hover. */
+  .btn-primary::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      100deg,
+      transparent 20%,
+      rgb(255 255 255 / 0.5) 50%,
+      transparent 80%
+    );
+    transform: translateX(-120%);
+    transition: transform 0.8s ease;
+  }
+
+  .btn-primary:hover::before {
+    transform: translateX(120%);
+  }
+
+  .btn-ghost {
+    @apply border border-surface-border bg-surface-card/70 text-text-primary backdrop-blur hover:-translate-y-0.5 hover:border-primary/50 hover:text-primary;
+  }
+
+  .icon-btn {
+    @apply flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-surface-border bg-surface-card/80 text-lg text-text-secondary hover:border-primary/50 hover:text-primary;
+  }
+
+  .card {
+    @apply relative rounded-3xl border border-surface-border bg-surface-card shadow-card transition-all duration-500;
+  }
+
+  .card-hover {
+    @apply hover:border-primary/40;
+  }
+
+  .live-dot {
+    @apply relative flex h-2 w-2;
+  }
+
+  .live-dot::before,
+  .live-dot::after {
+    content: "";
+    @apply absolute inset-0 rounded-full bg-emerald-500;
+  }
+
+  .live-dot::before {
+    @apply animate-ping bg-emerald-400 opacity-75;
   }
 }
 
 .ant-tabs-nav::before {
-  border-color: theme("colors.surface.border") !important;
+  border-color: rgb(var(--color-surface-border)) !important;
 }

@@ -2,9 +2,9 @@ import Experience from "../Experience/Experience";
 
 function Journey() {
   return (
-    <section>
+    <div className="relative">
       <Experience />
-    </section>
+    </div>
   );
 }
 

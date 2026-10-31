@@ -3,49 +3,53 @@ import { VerticalTimelineElement } from "react-vertical-timeline-component";
 import { formatDateRange } from "../../lib/dateRange";
 
 function ExperienceCard({ experienceList }) {
+  const { image, company, position, date, skills = [] } = experienceList;
+  const isOngoing = typeof date === "object" && date?.ongoing;
+
   return (
     <VerticalTimelineElement
       className="vertical-timeline-element--work"
-      contentStyle={{
-        boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
-        background: "#1c1c27",
-        color: "#fff",
-        borderBottom: "4px solid #854ce6",
-      }}
-      contentArrowStyle={{ borderRight: "7px solid  #854ce6" }}
-      date={formatDateRange(experienceList.date)}
-      iconStyle={{ background: "#854ce6", color: "#fff" }}
+      date={
+        <span className="inline-flex items-center gap-1.5 rounded-full border border-surface-border bg-surface-card/80 px-3 py-1 font-mono text-xs backdrop-blur">
+          <i aria-hidden="true" className="ri-calendar-line text-primary"></i>
+          {formatDateRange(date)}
+        </span>
+      }
       icon={
         <img
-          className="rounded-full"
-          src={experienceList.image}
-          alt={experienceList.company}
+          className="h-full w-full rounded-full object-cover"
+          src={image}
+          alt={company}
         />
       }
     >
       <div className="flex flex-col gap-4">
-        <div className="flex flex-col gap-2">
-          <h1 className="text-xl font-bold text-text-primary">
-            {experienceList.company}
-          </h1>
-          <h3 className="text-text-secondary text-xs desktop:text-sm">
-            {experienceList.position}
-          </h3>
-        </div>
-        {experienceList.skills?.length > 0 && (
-          <div className="flex flex-col gap-2">
-            <span className="text-sm text-text-secondary">Skills:</span>
-            <ul className="flex flex-wrap gap-2">
-              {experienceList.skills.map((skill) => (
-                <li
-                  className="px-2 py-1 text-xs leading-5 bg-primaryOverlay rounded-xl text-primary"
-                  key={skill}
-                >
-                  {skill}
-                </li>
-              ))}
-            </ul>
+        <div className="flex items-start justify-between gap-3">
+          <div className="flex flex-col gap-1">
+            <h3 className="text-lg font-semibold text-text-primary desktop:text-xl">
+              {company}
+            </h3>
+            <span className="text-sm font-medium text-primary">{position}</span>
           </div>
+          {isOngoing && (
+            <span className="inline-flex shrink-0 items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-500/10 px-2.5 py-1 text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">
+              <span className="live-dot"></span>
+              Current
+            </span>
+          )}
+        </div>
+
+        {skills.length > 0 && (
+          <ul className="flex flex-wrap gap-2">
+            {skills.map((skill) => (
+              <li
+                className="rounded-full border border-primary/15 bg-primaryOverlay px-2.5 py-1 text-xs font-medium text-primary"
+                key={skill}
+              >
+                {skill}
+              </li>
+            ))}
+          </ul>
         )}
       </div>
     </VerticalTimelineElement>

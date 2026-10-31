@@ -1,33 +1,47 @@
 import { skills } from "../../data/constants";
 import SkillCard from "./SkillCard";
+import SectionHeading from "../Custom/SectionHeading";
+
+const half = Math.ceil(skills.length / 2);
+const skillRows = [skills.slice(0, half), skills.slice(half)];
 
 function Skills() {
   return (
-    <section
-      id="skills"
-      className="flex justify-center bg-surface-1 items-center text-text-primary duration-300"
-    >
-      <div className="w-4/5 flex flex-col justify-center items-center text-center gap-[50px]">
-        <div className="flex flex-col gap-[10px]">
-          <h1 className="font-semibold text-[40px]">Skills</h1>
-          <p className="text-text-secondary text-lg">
-            Here are some of my skills on which I have been working on for the
-            past 2 years.
-          </p>
-        </div>
-        <div
-          style={{
-            maskImage:
-              "linear-gradient(to right, transparent, #000 10% 90%, transparent)",
-          }}
-          className="w-full overflow-hidden flex"
-        >
-          <div className="w-max flex gap-3 will-change-transform skills-track">
-            {[...skills, ...skills].map((skill, index) => {
-              return <SkillCard key={index} skill={skill} index={index} />;
-            })}
+    <section id="skills" className="relative">
+      <div className="container-page flex flex-col items-center gap-14">
+        <SectionHeading
+          title="My"
+          highlight="Skills"
+          description="Here are some of my skills on which I have been working on for the past 2 years."
+        />
+      </div>
+
+      <div
+        data-aos="fade-up"
+        data-aos-delay="150"
+        className="mx-auto mt-14 flex w-full max-w-7xl flex-col gap-4"
+      >
+        {skillRows.map((row, rowIndex) => (
+          <div
+            key={rowIndex}
+            className="marquee-mask flex w-full overflow-hidden py-2"
+          >
+            {/* The track holds two copies; padding equals the gap so -50% loops seamlessly. */}
+            <div
+              className={`skills-track flex w-max gap-4 pr-4 will-change-transform ${
+                rowIndex % 2 === 1 ? "skills-track--reverse" : ""
+              }`}
+            >
+              {[...row, ...row].map((skill, index) => (
+                <SkillCard
+                  key={index}
+                  skill={skill}
+                  isDuplicate={index >= row.length}
+                />
+              ))}
+            </div>
           </div>
-        </div>
+        ))}
       </div>
     </section>
   );

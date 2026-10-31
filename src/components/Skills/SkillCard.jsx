@@ -1,17 +1,23 @@
 import PropTypes from "prop-types";
 
-function SkillCard({ skill, index }) {
+function SkillCard({ skill, isDuplicate = false }) {
   return (
-    <div className="w-20 h-30 p-3 flex-shrink-0 group box-content flex flex-col justify-center items-center gap-[7px] duration-300 border-2 border-solid rounded-xl border-text-muted hover:border-primary">
-      <div className="h-11 flex items-center">
+    <div
+      aria-hidden={isDuplicate || undefined}
+      className="group flex w-28 shrink-0 flex-col items-center justify-center gap-3 rounded-2xl border border-surface-border bg-surface-card/80 px-3 py-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50"
+    >
+      <div className="flex h-12 items-center">
         <img
-          className="w-11 opacity-55 grayscale-[1] group-hover:grayscale-0 group-hover:opacity-100 duration-200"
+          className="max-h-11 w-11 object-contain opacity-80 transition-all duration-300 group-hover:scale-110 group-hover:opacity-100 group-hover:grayscale-0 "
           src={skill.image}
-          alt={`Skill ${index}`}
+          alt=""
+          loading="lazy"
         />
       </div>
 
-      <p className="text-text-secondary text-[11px]">{skill.label}</p>
+      <p className="text-xs font-medium text-text-secondary transition-colors group-hover:text-text-primary">
+        {skill.label}
+      </p>
     </div>
   );
 }
@@ -21,7 +27,7 @@ SkillCard.propTypes = {
     label: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
   }).isRequired,
-  index: PropTypes.number.isRequired,
+  isDuplicate: PropTypes.bool,
 };
 
 export default SkillCard;

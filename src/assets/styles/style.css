@@ -1,57 +1,147 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
-.hamburger-react {
-  display: none;
-  z-index: 1;
-}
-
-@media screen and (max-width: 1024px) {
-  .hamburger-react {
-    color: white;
-    display: initial;
-  }
-}
-
-.header-shadow {
-  box-shadow:
-    rgba(28, 28, 39, 0.16) 0px 3px 6px,
-    rgba(0, 0, 0, 0.23) 0px 3px 6px;
-}
-
 section {
-  padding: 80px 0;
-  scroll-margin-top: 100px;
+  padding: 72px 0;
+  scroll-margin-top: 24px;
 }
 
 @media screen and (min-width: 1024px) {
   section {
-    scroll-margin-top: 140px;
+    padding: 88px 0;
   }
 }
 
-.vertical-timeline::before {
-  background-color: #854ce6 !important;
-  mask-image: linear-gradient(
-    to bottom,
-    transparent 0%,
-    black 8%,
-    black 92%,
-    transparent 100%
+/* ---------- Logo ---------- */
+
+/* The monogram is a mask, so it is painted with the active theme's brand gradient. */
+.logo-mark {
+  background-image: linear-gradient(135deg, rgb(var(--color-primary)), rgb(var(--color-accent)));
+  -webkit-mask: url("../images/logo.svg") center / contain no-repeat;
+  mask: url("../images/logo.svg") center / contain no-repeat;
+}
+
+/* ---------- Ambient background ---------- */
+
+.aurora {
+  position: absolute;
+  width: 62vmax;
+  height: 62vmax;
+  border-radius: 9999px;
+  opacity: var(--aurora-opacity);
+  will-change: transform;
+}
+
+.aurora--1 {
+  top: -28vmax;
+  left: -18vmax;
+  background: radial-gradient(circle, rgb(var(--color-gold) / 0.55), transparent 62%);
+  animation: aurora-drift-1 28s ease-in-out infinite alternate;
+}
+
+.aurora--2 {
+  top: -24vmax;
+  right: -22vmax;
+  background: radial-gradient(circle, rgb(var(--color-tangerine) / 0.4), transparent 62%);
+  animation: aurora-drift-2 34s ease-in-out infinite alternate;
+}
+
+.aurora--3 {
+  bottom: -36vmax;
+  left: 18vw;
+  background: radial-gradient(circle, rgb(var(--color-tertiary) / 0.28), transparent 62%);
+  animation: aurora-drift-3 40s ease-in-out infinite alternate;
+}
+
+@keyframes aurora-drift-1 {
+  to {
+    transform: translate(14vw, 10vh) scale(1.15);
+  }
+}
+
+@keyframes aurora-drift-2 {
+  to {
+    transform: translate(-12vw, 14vh) scale(0.9);
+  }
+}
+
+@keyframes aurora-drift-3 {
+  to {
+    transform: translate(-16vw, -12vh) scale(1.2);
+  }
+}
+
+.bg-noise {
+  opacity: var(--noise-opacity);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- Hero ---------- */
+
+.grid-twinkle svg rect {
+  animation: twinkle 6s ease-in-out infinite;
+}
+
+.grid-twinkle svg rect:nth-child(3n) {
+  animation-delay: 2s;
+}
+
+.grid-twinkle svg rect:nth-child(3n + 1) {
+  animation-delay: 4s;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Thin rotating gradient ring around the portrait. */
+.hero-ring {
+  background: conic-gradient(
+    from 0deg,
+    rgb(var(--color-primary)),
+    rgb(var(--color-accent)),
+    transparent 40%,
+    rgb(var(--color-tertiary)),
+    rgb(var(--color-primary))
   );
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    transparent 0%,
-    black 8%,
-    black 92%,
-    transparent 100%
-  );
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1.5px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1.5px));
+}
+
+/* Clips the portrait to the disc at the bottom, lets the head pop out on top. */
+.portrait-mask {
+  -webkit-mask-image:
+    radial-gradient(circle closest-side at 50% 50%, #000 79.5%, transparent 80%),
+    linear-gradient(to bottom, #000 50%, transparent 50%);
+  mask-image:
+    radial-gradient(circle closest-side at 50% 50%, #000 79.5%, transparent 80%),
+    linear-gradient(to bottom, #000 50%, transparent 50%);
+}
+
+.hero-arrow path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+
+/* ---------- Skills marquee ---------- */
+
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 12% 88%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 12% 88%, transparent);
 }
 
 .skills-track {
-  animation: scrollSkills 50s linear infinite;
+  animation: scrollSkills 55s linear infinite;
 }
 
-.skills-track:hover {
+.skills-track--reverse {
+  animation-direction: reverse;
+}
+
+.marquee-mask:hover .skills-track {
   animation-play-state: paused;
 }
 
@@ -61,160 +151,130 @@ section {
   }
 }
 
-.loader {
-  width: 100%;
-  height: 100%;
-  background-color: #1c1c27;
-  z-index: 11;
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* ---------- Experience timeline (react-vertical-timeline-component) ---------- */
+
+.journey-timeline.vertical-timeline::before {
+  left: 19px;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    rgb(var(--color-primary)),
+    rgb(var(--color-accent)) 55%,
+    rgb(var(--color-tertiary))
+  );
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%);
 }
 
-.pl {
-  width: 11em;
-  height: 10em;
+.journey-timeline .vertical-timeline-element .vertical-timeline-element-icon {
+  overflow: hidden;
+  background: rgb(var(--color-surface-card));
+  box-shadow:
+    0 0 0 4px rgb(var(--color-surface-2)),
+    0 0 0 5px rgb(var(--color-primary) / 0.55),
+    0 0 26px rgb(var(--color-primary) / 0.45);
 }
 
-.pl__ring,
-.pl__worm1,
-.pl__worm2,
-.pl__worm3 {
-  animation-duration: 4s;
-  animation-iteration-count: infinite;
+.journey-timeline .vertical-timeline-element-content {
+  padding: 1.5rem;
+  border: 1px solid rgb(var(--color-surface-border));
+  border-radius: 1.5rem;
+  background: rgb(var(--color-surface-card));
+  color: rgb(var(--color-text-primary));
+  box-shadow: 0 18px 45px -28px rgb(var(--color-shadow) / 0.6);
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.pl__ring {
-  stroke: #232332;
+.journey-timeline .vertical-timeline-element-content:hover {
+  border-color: rgb(var(--color-primary) / 0.45);
+  box-shadow:
+    0 0 0 1px rgb(var(--color-primary) / 0.12),
+    0 24px 50px -24px rgb(var(--color-primary) / 0.5);
 }
 
-.pl__worm1 {
-  animation-name: worm1;
+.journey-timeline .vertical-timeline-element-content-arrow {
+  border-right-color: rgb(var(--color-surface-border));
 }
 
-.pl__worm2 {
-  animation-name: worm2;
-  transform-origin: 32px 88px;
+.journey-timeline .vertical-timeline-element-content .vertical-timeline-element-date {
+  opacity: 1;
+  padding-bottom: 0;
+  color: rgb(var(--color-text-secondary));
 }
 
-.pl__worm3 {
-  animation-name: worm3;
-  transform-origin: 144px 88px;
-}
-
-@keyframes worm1 {
-  from {
-    animation-timing-function: ease-out;
-    stroke-dashoffset: 43.98;
+@media only screen and (min-width: 1170px) {
+  .journey-timeline.vertical-timeline--two-columns::before {
+    left: 50%;
+    margin-left: -1px;
   }
-  12.5% {
-    animation-timing-function: ease-in-out;
-    stroke-dashoffset: -131.95;
-  }
-  25% {
-    animation-timing-function: ease-in;
-    stroke-dashoffset: 0;
-  }
-  37.5%,
-  50% {
-    animation-timing-function: ease-out;
-    stroke-dashoffset: -175.93;
-  }
-  62.5% {
-    animation-timing-function: ease-in-out;
-    stroke-dashoffset: 0;
-  }
-  75% {
-    animation-timing-function: ease-in;
-    stroke-dashoffset: -131.95;
-  }
-  87.5%,
-  to {
-    stroke-dashoffset: 43.98;
+
+  .journey-timeline.vertical-timeline--two-columns .vertical-timeline-element-content .vertical-timeline-element-date {
+    top: 12px;
+    padding: 0;
   }
 }
 
-@keyframes worm2 {
-  from,
-  35.5% {
-    animation-timing-function: linear;
-    stroke-dasharray: 0 40 0 44;
-    visibility: hidden;
-    transform: translate(0, 0) rotate(0);
-  }
-  37.5% {
-    animation-timing-function: ease-out;
-    stroke-dasharray: 0 40 44 0;
-    visibility: visible;
-    transform: translate(0, 0) rotate(0);
-  }
-  47.5% {
-    animation-timing-function: ease-in;
-    stroke-dasharray: 0 4 40 40;
-    visibility: visible;
-    transform: translate(0, -80px) rotate(360deg);
-  }
-  50% {
-    animation-timing-function: linear;
-    stroke-dasharray: 0 4 40 40;
-    visibility: visible;
-    transform: translate(0, -36px) rotate(360deg);
-  }
-  52.5%,
-  to {
-    stroke-dasharray: 0 42 0 42;
-    visibility: hidden;
-    transform: translate(0, 12px) rotate(360deg);
-  }
+/* ---------- Third-party theming ---------- */
+
+.Toastify {
+  --toastify-font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --toastify-color-light: rgb(var(--color-surface-card));
+  --toastify-color-dark: rgb(var(--color-surface-elevated));
+  --toastify-text-color-light: rgb(var(--color-text-primary));
+  --toastify-text-color-dark: rgb(var(--color-text-primary));
 }
 
-@keyframes worm3 {
-  from {
-    animation-timing-function: linear;
-    stroke-dasharray: 0 4 40 40;
-    visibility: visible;
-    transform: translate(0, -36px) rotate(0);
-  }
-  2.5% {
-    animation-timing-function: linear;
-    stroke-dasharray: 0 42 0 42;
-    visibility: hidden;
-    transform: translate(0, 12px) rotate(0);
-  }
-  85.5% {
-    animation-timing-function: linear;
-    stroke-dasharray: 0 40 0 44;
-    visibility: hidden;
-    transform: translate(0, 0) rotate(0);
-  }
-  87.5% {
-    animation-timing-function: ease-out;
-    stroke-dasharray: 0 40 44 0;
-    visibility: visible;
-    transform: translate(0, 0) rotate(0);
-  }
-  97.5% {
-    animation-timing-function: ease-in;
-    stroke-dasharray: 0 4 40 40;
-    visibility: visible;
-    transform: translate(0, -80px) rotate(-360deg);
-  }
-  to {
-    stroke-dasharray: 0 4 40 40;
-    visibility: visible;
-    transform: translate(0, -36px) rotate(-360deg);
-  }
+.Toastify .Toastify__toast {
+  border: 1px solid rgb(var(--color-surface-border));
+  border-radius: 16px;
+  box-shadow: 0 20px 45px -20px rgb(var(--color-shadow) / 0.45);
 }
 
-.Toastify .Toastify__toast-container .Toastify__toast-theme--dark {
-  background-color: #232332;
+.ant-modal-mask,
+.ant-image-preview-mask {
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
 }
 
-.Toastify
-  .Toastify__toast-container
-  .Toastify__toast-theme--dark
-  .Toastify__toast-body
-  div:last-child {
-  font-family: Poppins;
+/* Circular theme reveal (see ThemeProvider). */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* ---------- Scrollbar ---------- */
+
+html {
+  scrollbar-color: rgb(var(--color-text-subtle) / 0.6) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 3px solid rgb(var(--color-surface-2));
+  border-radius: 9999px;
+  background: rgb(var(--color-text-subtle) / 0.6);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--color-primary) / 0.7);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

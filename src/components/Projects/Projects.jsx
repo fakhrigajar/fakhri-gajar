@@ -1,26 +1,20 @@
 import { projects } from "../../data/constants";
 import ProjectCard from "./ProjectCard";
+import SectionHeading from "../Custom/SectionHeading";
 
 function Projects() {
   return (
-    <section
-      id="projects"
-      className="flex justify-center items-center text-white"
-    >
-      <div className="w-4/5 flex flex-col items-center gap-[50px]">
-        <div className="flex flex-col items-center text-center gap-5">
-          <h1 className="font-semibold text-[40px]">Projects</h1>
-          <p className="text-text-secondary text-lg">
-            I have worked on a wide range of projects. Here are some of my
-            projects.
-          </p>
-        </div>
-        <div className="flex flex-col gap-5 desktop:gap-[50px] w-full">
-          <div className="grid w-full grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-5 desktop:grid-cols-[repeat(auto-fill,minmax(300px,1fr))] desktop:gap-5">
-            {projects.map((project, index) => {
-              return <ProjectCard key={index} projectsList={project} />;
-            })}
-          </div>
+    <section id="projects" className="relative">
+      <div className="container-page flex flex-col items-center gap-14">
+        <SectionHeading
+          title="Featured"
+          highlight="Projects"
+          description="I have worked on a wide range of projects. Here are some of my projects."
+        />
+        <div className="grid w-full gap-6 sm:grid-cols-2 desktop:grid-cols-3">
+          {projects.map((project, index) => (
+            <ProjectCard key={index} projectsList={project} index={index} />
+          ))}
         </div>
       </div>
     </section>

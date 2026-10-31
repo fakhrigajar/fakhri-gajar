@@ -17,16 +17,26 @@ import { ToastContainer } from "react-toastify";
 import Education from "./components/Education/Education";
 import Journey from "./components/Journey/Journey";
 import Certificates from "./components/Certificates/Certificates";
+import BackgroundEffects from "./components/Custom/BackgroundEffects";
+import { antdThemes } from "./lib/antdTheme";
+import { useTheme } from "./context/theme";
 
 function App() {
+  const { theme } = useTheme();
+
   useEffect(() => {
     Aos.init({
-      duration: 200,
+      duration: 800,
+      easing: "ease-out-cubic",
+      once: true,
+      offset: 60,
+      disable: () =>
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches,
     });
   }, []);
 
   return (
-    <ConfigProvider>
+    <ConfigProvider theme={antdThemes[theme]}>
       <ToastContainer
         position="top-center"
         autoClose={2000}
@@ -37,17 +47,19 @@ function App() {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        theme="dark"
-        transition:Bounce
+        theme={theme}
       />
+      <BackgroundEffects />
       <Header />
-      <Hero />
-      <Skills />
-      <Projects />
-      <Education />
-      <Journey />
-      <Certificates />
-      <Contact />
+      <main>
+        <Hero />
+        <Skills />
+        <Projects />
+        <Education />
+        <Journey />
+        <Certificates />
+        <Contact />
+      </main>
       <Footer />
       <WorkWithMe />
     </ConfigProvider>

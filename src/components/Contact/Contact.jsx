@@ -1,164 +1,189 @@
 import { useRef, useState } from "react";
 import { contactDetail } from "../../data/constants";
 import emailjs from "@emailjs/browser";
-import { TextField } from "@mui/material";
 import { toast } from "react-toastify";
+import SectionHeading from "../Custom/SectionHeading";
+import FormField from "./FormField";
+
+const EMPTY_INPUTS = {
+  name: "",
+  email: "",
+  subject: "",
+  message: "",
+};
+
+const INFO_TITLES = {
+  "ri-map-pin-line": "Location",
+  "ri-mail-line": "Email",
+  "ri-phone-fill": "Phone",
+};
 
 function Contact() {
-  const [inputs, setInputs] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
+  const [inputs, setInputs] = useState(EMPTY_INPUTS);
+  const [isSending, setIsSending] = useState(false);
   const form = useRef();
+
+  const handleChange = (e) =>
+    setInputs({ ...inputs, [e.target.name]: e.target.value });
+
   const sendMail = (e) => {
     e.preventDefault();
-    if (
-      inputs.subject === "" &&
-      inputs.name === "" &&
-      inputs.message === "" &&
-      inputs.email === ""
-    ) {
+    if (Object.values(inputs).some((value) => value.trim() === "")) {
       toast.warning("Please fill all the inputs");
-      return inputs;
+      return;
     }
+
+    setIsSending(true);
     emailjs
       .sendForm("service_ntjgx6t", "template_2ergwl7", form.current, {
         publicKey: "bzj7XofiRWUJhFwDn",
       })
-      .then((e) => {
+      .then(() => {
         toast.success("Message sent succesfully");
-        console.log(e);
+        setInputs(EMPTY_INPUTS);
       })
-      .catch((e) => {
+      .catch((error) => {
         toast.error("There is an error!");
-        console.log(e);
-      });
-
-    setInputs({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    });
+        console.log(error);
+      })
+      .finally(() => setIsSending(false));
   };
 
   return (
-    <section id="contact" className="flex justify-center items-center">
-      <div className="w-4/5 flex flex-col gap-[50px]">
-        <h1 className="text-center text-[40px] font-semibold text-white">
-          Contact me
-        </h1>
-        <div className="flex w-full flex-col-reverse overflow-hidden rounded-[10px] bg-surface-2 shadow-[0_0_20px_1px_rgba(0,0,0,0.1)] desktop:grid desktop:grid-cols-[500px_1fr]">
-          <div
-            className="relative p-[2.3rem_2.2rem] before:absolute before:-bottom-[77px] before:right-[50px] before:h-[100px] before:w-[110px] before:rounded-full before:border-[22px] before:border-primary before:opacity-30 before:content-['']"
-            data-aos="slide-right"
-          >
-            <h3 className="text-2xl text-white">Let's get in touch</h3>
-            <p className="my-6 w-full leading-normal text-text-muted desktop:w-[400px]">
-              {contactDetail.description}
-            </p>
+    <section id="contact" className="relative">
+      <div className="container-page flex flex-col items-center gap-14">
+        <SectionHeading title="Have a project" highlight="in mind?" />
 
-            <div>
-              {contactDetail.infos.map((info, index) => (
-                <div
-                  key={index}
-                  className="my-[0.7rem] flex items-center gap-2.5 text-[0.95rem] text-text-secondary"
-                >
-                  <i className={`${info.icon} text-[1.3rem]`}></i>
-                  <p>{info.label}</p>
+        <div
+          data-aos="fade-up"
+          className="w-full rounded-[2rem] bg-gradient-to-br from-gold/70 via-surface-border to-tangerine/60 p-px shadow-glow"
+        >
+          <div className="grid overflow-hidden rounded-[calc(2rem-1px)] bg-surface-card desktop:grid-cols-[0.9fr_1.1fr]">
+            <div className="relative overflow-hidden border-b border-surface-border bg-surface-1/70 p-8 sm:p-10 desktop:border-b-0 desktop:border-r">
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute -bottom-24 -left-24 h-64 w-64 animate-pulse-glow rounded-full bg-gold/25 blur-3xl"
+              ></div>
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute -bottom-16 -right-16 h-44 w-44 rounded-full border-[18px] border-primary/10"
+              ></div>
+
+              <div className="relative">
+                <h3 className="text-2xl font-semibold text-text-primary sm:text-3xl">
+                  Let&apos;s get in touch
+                </h3>
+                <p className="mt-4 leading-relaxed text-text-secondary">
+                  {contactDetail.description}
+                </p>
+
+                <ul className="mt-8 flex flex-col gap-5">
+                  {contactDetail.infos.map((info, index) => (
+                    <li key={index} className="group flex items-center gap-4">
+                      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-primary/15 bg-primaryOverlay text-xl text-primary transition-all duration-300 group-hover:-rotate-6 group-hover:bg-brand group-hover:text-onBrand">
+                        <i aria-hidden="true" className={info.icon}></i>
+                      </span>
+                      <span className="flex min-w-0 flex-col">
+                        <span className="text-xs font-medium uppercase tracking-wider text-text-muted">
+                          {INFO_TITLES[info.icon] || "Info"}
+                        </span>
+                        {info.icon === "ri-mail-line" ? (
+                          <a
+                            href={`mailto:${info.label}`}
+                            className="break-all font-medium text-text-primary no-underline transition-colors hover:text-primary"
+                          >
+                            {info.label}
+                          </a>
+                        ) : (
+                          <span className="font-medium text-text-primary">
+                            {info.label}
+                          </span>
+                        )}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-10">
+                  <p className="text-sm text-text-muted">Connect with me</p>
+                  <div className="mt-3 flex gap-3">
+                    {contactDetail.socials.map((social, index) => (
+                      <a
+                        key={index}
+                        target="_blank"
+                        rel="noreferrer"
+                        href={social.value}
+                        aria-label={social.icon.replace(
+                          /^ri-|-(fill|line)$/g,
+                          "",
+                        )}
+                        className="icon-btn hover:border-transparent hover:bg-brand hover:text-onBrand"
+                      >
+                        <i aria-hidden="true" className={social.icon}></i>
+                      </a>
+                    ))}
+                  </div>
                 </div>
-              ))}
-            </div>
-
-            <div className="pt-8">
-              <p className="text-text-secondary">Connect with us :</p>
-              <div className="mt-2 flex">
-                {contactDetail.socials.map((social, index) => (
-                  <a
-                    key={index}
-                    target="_blank"
-                    rel="noreferrer"
-                    href={social.value}
-                    className="mr-2 flex h-[35px] w-[35px] items-center justify-center rounded-[5px] bg-gradient-to-tr from-primary to-primaryOverlay text-white no-underline duration-300 hover:scale-105"
-                  >
-                    <i className={social.icon}></i>
-                  </a>
-                ))}
               </div>
             </div>
-          </div>
-
-          <div className="relative bg-primary before:absolute before:-left-[13px] before:top-[50px] before:hidden before:h-[26px] before:w-[26px] before:rotate-45 before:bg-white before:content-[''] desktop:before:block">
-            <span className="absolute right-[-40px] top-[130px] h-[130px] w-[130px] rounded-full bg-[linear-gradient(135deg,transparent_20%,#231e36)]"></span>
-            <span className="absolute right-[30px] top-[10px] h-[80px] w-[80px] rounded-full bg-[linear-gradient(135deg,transparent_20%,#231e36)]"></span>
 
             <form
               ref={form}
               onSubmit={sendMail}
               autoComplete="off"
-              data-aos="slide-left"
-              className="font-poppins relative overflow-hidden p-[2.3rem_2.2rem] [&_.MuiFormControl-root]:w-full [&_.MuiFormLabel-root]:text-text-secondary [&_.MuiInputBase-input]:text-[0.95rem] [&_.MuiInputLabel-root.Mui-focused]:text-white [&_.MuiInputBase-input]:font-medium [&_.MuiInputBase-input]:tracking-[0.5px] [&_.MuiInputBase-input]:text-white [&_.MuiInputBase-root]:rounded-[20px] [&_.MuiInputLabel-shrink]:bg-primary [&_.MuiInputLabel-shrink]:pr-[7px] [&_.MuiInputLabel-shrink]:text-white [&_.MuiOutlinedInput-notchedOutline]:border-2 [&_.MuiOutlinedInput-notchedOutline]:border-text-secondary [&_.MuiOutlinedInput-root:hover_.MuiOutlinedInput-notchedOutline]:!border-white [&_.Mui-focused_.MuiOutlinedInput-notchedOutline]:!border-white [&_textarea]:pr-[5px] [&_textarea::-webkit-scrollbar]:w-[5px] [&_textarea::-webkit-scrollbar]:rounded-[20px] [&_textarea::-webkit-scrollbar-thumb]:rounded-[20px] [&_textarea::-webkit-scrollbar-thumb]:bg-white"
+              className="flex flex-col gap-5 p-8 sm:p-10"
             >
-              <div className="relative my-4">
-                <TextField
-                  id="outlined-basic"
+              <div className="grid gap-5 sm:grid-cols-2">
+                <FormField
                   label="Your Name"
-                  value={inputs.name}
                   name="name"
-                  type="text"
-                  onChange={(e) =>
-                    setInputs({ ...inputs, name: e.target.value })
-                  }
-                  variant="outlined"
+                  value={inputs.name}
+                  onChange={handleChange}
                 />
-              </div>
-              <div className="relative my-4">
-                <TextField
-                  id="outlined-basic"
+                <FormField
                   label="Email"
-                  value={inputs.email}
-                  type="email"
                   name="email"
-                  onChange={(e) =>
-                    setInputs({ ...inputs, email: e.target.value })
-                  }
-                  variant="outlined"
+                  type="email"
+                  value={inputs.email}
+                  onChange={handleChange}
                 />
               </div>
-              <div className="relative my-4">
-                <TextField
-                  id="outlined-basic"
-                  label="Subject"
-                  value={inputs.subject}
-                  name="subject"
-                  type="text"
-                  onChange={(e) =>
-                    setInputs({ ...inputs, subject: e.target.value })
-                  }
-                  variant="outlined"
-                />
-              </div>
-              <div className="relative my-4">
-                <TextField
-                  id="outlined-multiline-flexible"
-                  label="Message"
-                  value={inputs.message}
-                  name="message"
-                  onChange={(e) =>
-                    setInputs({ ...inputs, message: e.target.value })
-                  }
-                  multiline
-                  minRows={4}
-                  maxRows={4}
-                />
-              </div>
-              <input
-                type="submit"
-                value="Send"
-                className="m-0 w-full cursor-pointer rounded-[25px] border-2 border-text-secondary bg-white px-[1.3rem] py-[0.6rem] text-[0.95rem] leading-none text-primary outline-none duration-300 hover:bg-transparent hover:text-white desktop:w-auto"
+              <FormField
+                label="Subject"
+                name="subject"
+                value={inputs.subject}
+                onChange={handleChange}
               />
+              <FormField
+                label="Message"
+                name="message"
+                value={inputs.message}
+                onChange={handleChange}
+                multiline
+              />
+              <button
+                type="submit"
+                disabled={isSending}
+                className="btn btn-primary group mt-1 w-full sm:w-auto sm:self-start"
+              >
+                {isSending ? (
+                  <>
+                    <i
+                      aria-hidden="true"
+                      className="ri-loader-4-line animate-spin text-base"
+                    ></i>
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    Send message
+                    <i
+                      aria-hidden="true"
+                      className="ri-send-plane-2-line text-base transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-1"
+                    ></i>
+                  </>
+                )}
+              </button>
             </form>
           </div>
         </div>
