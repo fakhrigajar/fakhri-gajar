@@ -35,6 +35,7 @@ import codelingoImg from "../assets/images/projects/codelingo.png";
 import modshopImg from "../assets/images/projects/modshop.png";
 import dolphinBookImg from "../assets/images/projects/dolphin-book.png";
 import fitbAlgoImg from "../assets/images/projects/fitb-algo.png";
+import chessCraftImg from "../assets/images/projects/chesscraft.png";
 
 import cssFreecodecampImg from "../assets/images/certificates/css-freecodecamp.jpg";
 import cssHackerrankImg from "../assets/images/certificates/css-hackerrank.jpg";
@@ -191,8 +192,6 @@ export const experiences = [
     company: "Hadaf Stars Campus",
     image: hscImg,
     date: { start: "Sep 2025", end: "", ongoing: true },
-    description:
-      "As an ICT teacher for students in grades 3 to 7, I design and deliver engaging lessons that introduce young learners to the fundamentals of computer science, digital literacy, and safe technology use. My teaching focuses on helping students understand algorithms, logical thinking, and problem-solving through interactive platforms. I create a supportive and motivating classroom environment where students explore the basics of programming, data handling, and information processing. By combining theory with hands-on activities, I aim to develop their curiosity about technology and prepare them for more advanced ICT concepts in the future.",
     skills: [],
   },
   {
@@ -200,8 +199,6 @@ export const experiences = [
     company: "Algoritmika",
     image: alqoritmikaImg,
     date: { start: "Nov 2026", end: "Dec 2026", ongoing: false },
-    description:
-      "As a Mentor at the Məktəblilərarası Milli Hakaton (National Hackathon for School Students), I guided semifinalist teams in developing their technology projects by providing technical support and mentorship throughout the process. My role involved assisting students in building web-based and Python projects using tools such as HTML, CSS, Flask, Pandas, PyQt, and PyGame. I focused on fostering their creativity, teamwork, and problem-solving skills while helping them apply programming concepts in real-world scenarios. Through this experience, I strengthened my communication and leadership abilities, gained valuable mentoring experience, and contributed to inspiring the next generation of young technologists.",
     skills: ["HTML", "CSS", "Flask", "Pandas", "PyQT", "PyGame"],
   },
   {
@@ -209,8 +206,6 @@ export const experiences = [
     company: "IT Brains",
     image: itbrainsImg,
     date: { start: "September 2024", end: "November 2024", ongoing: false },
-    description:
-      "As a Frontend Developer Mentor, I enjoy sharing what I’ve learned about building clean, responsive, and user-friendly interfaces. I guide beginners through real project experiences, explain concepts in a simple way, and help them avoid the mistakes I made when starting out. It’s about growing together and turning challenges into confidence",
     skills: [
       "Front-End Development",
       "JavaScript",
@@ -225,8 +220,6 @@ export const experiences = [
     company: "NEXT US",
     image: companyImg,
     date: { start: "May 2024", end: "August 2024", ongoing: false },
-    description:
-      "I am currently working as a Frontend Developer at a startup called NEXT US. Here we work as a team and try to come up with interesting projects.",
     skills: [
       "Front-End Development",
       "JavaScript",
@@ -245,8 +238,6 @@ export const experiences = [
     company: "JET Academy",
     image: jetAcademyImg,
     date: { start: "May 2024", end: "June 2024", ongoing: false },
-    description:
-      "I am currently participating in JET Academy's Frontend Developer internship program. Here, I am increasing my knowledge and experience by working on interesting projects.",
     skills: [
       "Front-End Development",
       "JavaScript",
@@ -274,6 +265,13 @@ export const educations = [
 ];
 
 export const projects = [
+  {
+    name: "ChessCraft",
+    image: chessCraftImg,
+    category: "Web App",
+    skills: ["HTML", "CSS", "Javascript", "React JS", "Tailwind CSS"],
+    links: ["https://chesscraft-app.vercel.app/"],
+  },
   {
     name: "FITB Algo",
     image: fitbAlgoImg,

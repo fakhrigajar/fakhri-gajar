@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { experiences } from "../../data/constants";
 import ExperienceCard from "./ExperienceCard";
 
@@ -7,11 +6,6 @@ import "react-vertical-timeline-component/style.min.css";
 import { VerticalTimeline } from "react-vertical-timeline-component";
 
 function Experience() {
-  const [readMoreActive, setReadMoreActive] = useState({
-    index: "",
-    boolean: "",
-  });
-
   return (
     <section id="experience" className="overflow-hidden flex justify-center">
       <div className="w-4/5 flex flex-col gap-20 items-center">
@@ -28,10 +22,7 @@ function Experience() {
             {experiences.map((experience, index) => (
               <ExperienceCard
                 key={index}
-                readMoreActive={readMoreActive}
-                setReadMoreActive={setReadMoreActive}
                 experienceList={experience}
-                id={index}
               />
             ))}
           </div>
