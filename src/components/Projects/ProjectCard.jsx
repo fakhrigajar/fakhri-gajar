@@ -31,7 +31,7 @@ function ProjectCard({ projectsList, index }) {
           target="_blank"
           rel="noreferrer"
           aria-label={`View ${name} live`}
-          className="relative m-2 mb-0 block aspect-[16/10] overflow-hidden rounded-2xl bg-surface-1"
+          className="relative m-2 mb-0 block aspect-[2/1] overflow-hidden rounded-2xl bg-surface-1"
         >
           <img
             src={image}

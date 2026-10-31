@@ -93,7 +93,7 @@ function HeroImage() {
           />
         </svg>
 
-        <div className="absolute -right-2 bottom-[8%] z-[2] hidden w-[250px] animate-float rounded-2xl border border-surface-border bg-surface-card/85 p-4 shadow-2xl shadow-black/20 backdrop-blur-xl sm:block desktop:-right-12">
+        <div className="absolute -right-2 bottom-[8%] z-[2] hidden w-[230px] animate-float rounded-2xl border border-surface-border bg-surface-card/85 p-4 shadow-2xl shadow-black/20 backdrop-blur-xl desktop:block xl:-right-12 xl:w-[250px]">
           <div className="mb-3 flex items-center gap-1.5 border-b border-surface-border pb-3">
             <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]"></span>
             <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]"></span>

@@ -21,7 +21,7 @@ function CertificateCard({ certificate, index, revealed = false }) {
             alt={title}
             loading="lazy"
             rootClassName="block h-full w-full"
-            className="!h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+            className="!h-full w-full object-contain transition-transform duration-700 ease-out group-hover:scale-105"
             preview={{
               cover: (
                 <span className="flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-[#141222] shadow-lg">
