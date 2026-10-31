@@ -24,22 +24,24 @@ function ProjectCard({ projectsList, index }) {
   const hiddenSkills = skills.slice(MAX_VISIBLE_SKILLS);
 
   return (
-    <div data-aos="fade-up" data-aos-delay={(index % 3) * 100}>
-      <article className="card card-hover group flex h-full flex-col">
+    <div data-aos="fade-up">
+      <article className="card card-hover group flex flex-col">
         <a
           href={liveLink}
           target="_blank"
           rel="noreferrer"
           aria-label={`View ${name} live`}
-          className="relative m-2 mb-0 block aspect-[2/1] overflow-hidden rounded-2xl bg-surface-1"
+          className="relative m-2 mb-0 overflow-hidden rounded-2xl bg-surface-1"
         >
-          <img
-            src={image}
-            alt={name}
-            loading="lazy"
-            decoding="async"
-            className="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
-          />
+          <div className="h-[200px]">
+            <img
+              src={image}
+              alt={name}
+              loading="lazy"
+              decoding="async"
+              className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+            />
+          </div>
 
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
 

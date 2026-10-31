@@ -232,8 +232,7 @@ section {
   box-shadow: 0 20px 45px -20px rgb(var(--color-shadow) / 0.45);
 }
 
-.ant-modal-mask,
-.ant-image-preview-mask {
+.ant-modal-mask {
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
 }
