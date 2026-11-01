@@ -5,6 +5,13 @@
 [build.environment]
   NODE_VERSION = "22"
 
+# Send the Netlify subdomain to the custom domain so search engines index one URL.
+[[redirects]]
+  from = "https://fakhri-gajar.netlify.app/*"
+  to = "https://fakhrigajar.com/:splat"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/*"
   to = "/index.html"

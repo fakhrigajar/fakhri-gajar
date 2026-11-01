@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
@@ -6,24 +6,115 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Fakhri Gajar — Frontend Developer crafting clean, responsive, and user-friendly web interfaces."
+      content="Fakhri Gajar (Fəxri Qacar, also written Fexri Qacar or Faxri Qacar) — Frontend Developer from Baku, Azerbaijan, crafting clean, responsive, and user-friendly web interfaces."
     />
+    <meta
+      name="keywords"
+      content="Fakhri Gajar, Fəxri Qacar, Fexri Qacar, Faxri Qacar, Fakhri Qajar, frontend developer, React developer, Baku, Azerbaijan"
+    />
+    <meta name="author" content="Fakhri Gajar" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://fakhrigajar.com/" />
     <meta name="theme-color" content="#0a0a09" />
+
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Fakhri Gajar" />
+    <meta property="og:url" content="https://fakhrigajar.com/" />
+    <meta
+      property="og:title"
+      content="Fakhri Gajar (Fəxri Qacar) — Frontend Developer"
+    />
+    <meta
+      property="og:description"
+      content="Frontend Developer from Baku, Azerbaijan, crafting clean, responsive, and user-friendly web interfaces."
+    />
+    <meta property="og:image" content="https://fakhrigajar.com/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Fakhri Gajar (Fəxri Qacar) — Frontend Developer"
+    />
+    <meta property="profile:first_name" content="Fakhri" />
+    <meta property="profile:last_name" content="Gajar" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://fakhrigajar.com/#website",
+            "url": "https://fakhrigajar.com/",
+            "name": "Fakhri Gajar",
+            "alternateName": ["Fəxri Qacar", "Fexri Qacar", "Faxri Qacar"],
+            "inLanguage": "en",
+            "publisher": { "@id": "https://fakhrigajar.com/#person" }
+          },
+          {
+            "@type": "ProfilePage",
+            "@id": "https://fakhrigajar.com/#profile",
+            "url": "https://fakhrigajar.com/",
+            "name": "Fakhri Gajar (Fəxri Qacar) — Frontend Developer",
+            "isPartOf": { "@id": "https://fakhrigajar.com/#website" },
+            "mainEntity": { "@id": "https://fakhrigajar.com/#person" }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://fakhrigajar.com/#person",
+            "name": "Fakhri Gajar",
+            "givenName": "Fakhri",
+            "familyName": "Gajar",
+            "alternateName": [
+              "Fəxri Qacar",
+              "Fexri Qacar",
+              "Faxri Qacar",
+              "Fakhri Qajar",
+              "Fexri Gajar"
+            ],
+            "jobTitle": "Frontend Developer",
+            "description": "Frontend Developer from Baku, Azerbaijan, crafting clean, responsive, and user-friendly web interfaces.",
+            "url": "https://fakhrigajar.com/",
+            "image": "https://fakhrigajar.com/og-image.jpg",
+            "email": "mailto:fakhrigajar@gmail.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Baku",
+              "addressCountry": "AZ"
+            },
+            "knowsAbout": [
+              "Frontend Development",
+              "JavaScript",
+              "React",
+              "Next.js",
+              "Tailwind CSS",
+              "Node.js"
+            ],
+            "sameAs": [
+              "https://github.com/fakhrigajar",
+              "https://www.linkedin.com/in/fakhrigajar/",
+              "https://www.instagram.com/faakhrii03",
+              "https://www.facebook.com/profile.php?id=100088924454057"
+            ]
+          }
+        ]
+      }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
     />
-    <title>Fakhri Gajar — Frontend Developer</title>
+    <title>Fakhri Gajar (Fəxri Qacar) — Frontend Developer</title>
     <script>
-      // Apply the saved (or system) theme before first paint to avoid a flash.
       (function () {
         var theme = "dark";
         try {
           var stored = localStorage.getItem("theme");
           if (stored === "light" || stored === "dark") theme = stored;
-          else if (window.matchMedia("(prefers-color-scheme: light)").matches) theme = "light";
+          else if (window.matchMedia("(prefers-color-scheme: light)").matches)
+            theme = "light";
         } catch (e) {}
         var root = document.documentElement;
         root.classList.toggle("dark", theme === "dark");

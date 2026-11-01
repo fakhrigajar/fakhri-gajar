@@ -11,7 +11,7 @@ function Footer() {
     <footer className="relative border-t border-surface-border/70 bg-surface-1/50 backdrop-blur-sm">
       <div className="container-page flex flex-col items-center gap-3 pb-24 pt-6 text-sm text-text-muted sm:pb-6">
         <p className="text-center">
-          © {currentYear} Fakhri Gajar. All rights reserved.
+          © {currentYear} {about.name}. All rights reserved.
         </p>
       </div>
     </footer>

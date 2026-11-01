@@ -51,7 +51,7 @@ function HeroImage() {
         <img
           className="portrait-mask relative z-[1] h-full w-full object-contain"
           src={about.image}
-          alt={about.name}
+          alt={`${about.name} (${about.nativeName})`}
         />
 
         {floatingBadges.map((badge) => (

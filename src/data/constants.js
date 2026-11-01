@@ -156,6 +156,7 @@ export const contactDetail = {
 
 export const about = {
   name: "Fakhri Gajar",
+  nativeName: "Fəxri Qacar",
   description:
     "I’m a passionate Frontend Developer focused on crafting clean, responsive, and user-friendly web interfaces. I love turning ideas into interactive digital experiences using modern web technologies.",
   roles: ["Frontend Developer", "Coder", "Programmer"],
